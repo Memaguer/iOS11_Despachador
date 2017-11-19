@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A14213066962D3B41CFE85E /* Pods_Despachador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE5EBC71BFEA7677D05C0FC /* Pods_Despachador.framework */; };
+		A707B4AF1FC0E8B700BDE63B /* InterfaceControllerStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707B4AE1FC0E8B700BDE63B /* InterfaceControllerStations.swift */; };
+		A707B4B11FC0EB6D00BDE63B /* StationCellWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707B4B01FC0EB6D00BDE63B /* StationCellWatch.swift */; };
+		A707B4B31FC0EF6F00BDE63B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707B4B21FC0EF6F00BDE63B /* Station.swift */; };
+		A707B4B51FC1009200BDE63B /* StationWStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707B4B41FC1009200BDE63B /* StationWStruct.swift */; };
 		A721DC841FA50601001F53C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DC831FA50601001F53C4 /* AppDelegate.swift */; };
 		A721DC861FA50601001F53C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DC851FA50601001F53C4 /* ViewController.swift */; };
 		A721DC891FA50601001F53C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A721DC871FA50601001F53C4 /* Main.storyboard */; };
@@ -14,6 +19,39 @@
 		A721DC8E1FA50601001F53C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */; };
 		A721DC991FA50601001F53C4 /* DespachadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DC981FA50601001F53C4 /* DespachadorTests.swift */; };
 		A721DCA41FA50601001F53C4 /* DespachadorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DCA31FA50601001F53C4 /* DespachadorUITests.swift */; };
+		A721DCB21FA542B6001F53C4 /* ViewControllerTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DCB11FA542B6001F53C4 /* ViewControllerTables.swift */; };
+		A721DCB41FA546F9001F53C4 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721DCB31FA546F9001F53C4 /* Bus.swift */; };
+		A72225A51FA635CD0032DF31 /* TableViewCellBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72225A41FA635CD0032DF31 /* TableViewCellBus.swift */; };
+		A722C38B1FB2A05600185E80 /* BusAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722C38A1FB2A05600185E80 /* BusAnnotation.swift */; };
+		A7339A9F1FA9768A00768B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */; };
+		A755E6A01FA992CB008571C5 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E6951FA992CB008571C5 /* GFBase32Utils.m */; };
+		A755E6A11FA992CB008571C5 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E6971FA992CB008571C5 /* GeoFire.m */; };
+		A755E6A21FA992CB008571C5 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E6981FA992CB008571C5 /* GFGeoHashQuery.m */; };
+		A755E6A31FA992CB008571C5 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E6991FA992CB008571C5 /* GFQuery.m */; };
+		A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E69A1FA992CB008571C5 /* GFGeoHash.m */; };
+		A755E6A61FA99472008571C5 /* ViewControllerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A755E6A51FA99472008571C5 /* ViewControllerMap.swift */; };
+		A793C11E1FBE2BD300755263 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A793C11C1FBE2BD300755263 /* Interface.storyboard */; };
+		A793C1201FBE2BD300755263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A793C11F1FBE2BD300755263 /* Assets.xcassets */; };
+		A793C1271FBE2BD300755263 /* WDespachador Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A793C1261FBE2BD300755263 /* WDespachador Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A793C12C1FBE2BD300755263 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C12B1FBE2BD300755263 /* InterfaceController.swift */; };
+		A793C12E1FBE2BD300755263 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C12D1FBE2BD300755263 /* ExtensionDelegate.swift */; };
+		A793C1301FBE2BD300755263 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C12F1FBE2BD300755263 /* NotificationController.swift */; };
+		A793C1321FBE2BD300755263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A793C1311FBE2BD300755263 /* Assets.xcassets */; };
+		A793C1371FBE2BD300755263 /* WDespachador.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A793C11A1FBE2BD300755263 /* WDespachador.app */; };
+		A793C1411FBE37C500755263 /* InterfaceControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1401FBE37C500755263 /* InterfaceControllerDetail.swift */; };
+		A793C1431FBE48E400755263 /* BusCellWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1421FBE48E400755263 /* BusCellWatch.swift */; };
+		A793C1451FBE4DF900755263 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1441FBE4DF900755263 /* Bus.swift */; };
+		A793C1471FBEA04700755263 /* BusAStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1461FBEA04700755263 /* BusAStruct.swift */; };
+		A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B111FAAAFD70038C982 /* TabBarController.swift */; };
+		A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */; };
+		A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */; };
+		A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B191FAACDD50038C982 /* Note.swift */; };
+		A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */; };
+		A7EABF4E1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */; };
+		A7EB01071FB8DCE7002B0FDD /* StationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */; };
+		A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */; };
+		A7FED13F1FA6ED5400D853F0 /* ViewControllerBusDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */; };
+		A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FED1421FA76CED00D853F0 /* BusStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +69,54 @@
 			remoteGlobalIDString = A721DC7F1FA50601001F53C4;
 			remoteInfo = Despachador;
 		};
+		A793C1281FBE2BD300755263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A721DC781FA50601001F53C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A793C1251FBE2BD300755263;
+			remoteInfo = "WDespachador Extension";
+		};
+		A793C1351FBE2BD300755263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A721DC781FA50601001F53C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A793C1191FBE2BD300755263;
+			remoteInfo = WDespachador;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A793C13D1FBE2BD300755263 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A793C1271FBE2BD300755263 /* WDespachador Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A793C13F1FBE2BD300755263 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A793C1371FBE2BD300755263 /* WDespachador.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3E8B7088F9D64D1FD981E022 /* Pods-Despachador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Despachador.release.xcconfig"; path = "Pods/Target Support Files/Pods-Despachador/Pods-Despachador.release.xcconfig"; sourceTree = "<group>"; };
+		4EE5EBC71BFEA7677D05C0FC /* Pods_Despachador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Despachador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A707B4AE1FC0E8B700BDE63B /* InterfaceControllerStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceControllerStations.swift; sourceTree = "<group>"; };
+		A707B4B01FC0EB6D00BDE63B /* StationCellWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellWatch.swift; sourceTree = "<group>"; };
+		A707B4B21FC0EF6F00BDE63B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		A707B4B41FC1009200BDE63B /* StationWStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationWStruct.swift; sourceTree = "<group>"; };
 		A721DC801FA50601001F53C4 /* Despachador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Despachador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A721DC831FA50601001F53C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A721DC851FA50601001F53C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +130,54 @@
 		A721DC9F1FA50601001F53C4 /* DespachadorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DespachadorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A721DCA31FA50601001F53C4 /* DespachadorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DespachadorUITests.swift; sourceTree = "<group>"; };
 		A721DCA51FA50601001F53C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A721DCB11FA542B6001F53C4 /* ViewControllerTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTables.swift; sourceTree = "<group>"; };
+		A721DCB31FA546F9001F53C4 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		A72225A41FA635CD0032DF31 /* TableViewCellBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellBus.swift; sourceTree = "<group>"; };
+		A722C38A1FB2A05600185E80 /* BusAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusAnnotation.swift; sourceTree = "<group>"; };
+		A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A755E6891FA98C67008571C5 /* Despachador-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Despachador-Bridging-Header.h"; path = "Despachador/Despachador-Bridging-Header.h"; sourceTree = "<group>"; };
+		A755E68F1FA992CB008571C5 /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		A755E6911FA992CB008571C5 /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		A755E6921FA992CB008571C5 /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		A755E6931FA992CB008571C5 /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		A755E6941FA992CB008571C5 /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		A755E6951FA992CB008571C5 /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		A755E6961FA992CB008571C5 /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		A755E6971FA992CB008571C5 /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		A755E6981FA992CB008571C5 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		A755E6991FA992CB008571C5 /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		A755E69A1FA992CB008571C5 /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		A755E69C1FA992CB008571C5 /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		A755E69D1FA992CB008571C5 /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		A755E69E1FA992CB008571C5 /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		A755E69F1FA992CB008571C5 /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		A755E6A51FA99472008571C5 /* ViewControllerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMap.swift; sourceTree = "<group>"; };
+		A793C11A1FBE2BD300755263 /* WDespachador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDespachador.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A793C11D1FBE2BD300755263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A793C11F1FBE2BD300755263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A793C1211FBE2BD300755263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A793C1261FBE2BD300755263 /* WDespachador Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WDespachador Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A793C12B1FBE2BD300755263 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A793C12D1FBE2BD300755263 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A793C12F1FBE2BD300755263 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A793C1311FBE2BD300755263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A793C1331FBE2BD300755263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A793C1341FBE2BD300755263 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A793C1401FBE37C500755263 /* InterfaceControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceControllerDetail.swift; sourceTree = "<group>"; };
+		A793C1421FBE48E400755263 /* BusCellWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusCellWatch.swift; sourceTree = "<group>"; };
+		A793C1441FBE4DF900755263 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		A793C1461FBEA04700755263 /* BusAStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusAStruct.swift; sourceTree = "<group>"; };
+		A79E5B111FAAAFD70038C982 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTable.swift; sourceTree = "<group>"; };
+		A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBook.swift; sourceTree = "<group>"; };
+		A79E5B191FAACDD50038C982 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNote.swift; sourceTree = "<group>"; };
+		A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNoteDetail.swift; sourceTree = "<group>"; };
+		A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStruct.swift; sourceTree = "<group>"; };
+		A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationAnnotation.swift; sourceTree = "<group>"; };
+		A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBusDetail.swift; sourceTree = "<group>"; };
+		A7FED1421FA76CED00D853F0 /* BusStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStruct.swift; sourceTree = "<group>"; };
+		CE16AA09CF6FB24040B811FD /* Pods-Despachador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Despachador.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Despachador/Pods-Despachador.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A14213066962D3B41CFE85E /* Pods_Despachador.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,15 +203,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A793C1231FBE2BD300755263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4276B5DBE11A7C5EDBF1F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE16AA09CF6FB24040B811FD /* Pods-Despachador.debug.xcconfig */,
+				3E8B7088F9D64D1FD981E022 /* Pods-Despachador.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A721DC771FA50601001F53C4 = {
 			isa = PBXGroup;
 			children = (
 				A721DC821FA50601001F53C4 /* Despachador */,
+				A755E6891FA98C67008571C5 /* Despachador-Bridging-Header.h */,
 				A721DC971FA50601001F53C4 /* DespachadorTests */,
 				A721DCA21FA50601001F53C4 /* DespachadorUITests */,
+				A793C11B1FBE2BD300755263 /* WDespachador */,
+				A793C12A1FBE2BD300755263 /* WDespachador Extension */,
+				BF456931B9DE233CCF581E41 /* Frameworks */,
+				8B4276B5DBE11A7C5EDBF1F3 /* Pods */,
 				A721DC811FA50601001F53C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +243,8 @@
 				A721DC801FA50601001F53C4 /* Despachador.app */,
 				A721DC941FA50601001F53C4 /* DespachadorTests.xctest */,
 				A721DC9F1FA50601001F53C4 /* DespachadorUITests.xctest */,
+				A793C11A1FBE2BD300755263 /* WDespachador.app */,
+				A793C1261FBE2BD300755263 /* WDespachador Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,11 +253,28 @@
 			isa = PBXGroup;
 			children = (
 				A721DC831FA50601001F53C4 /* AppDelegate.swift */,
-				A721DC851FA50601001F53C4 /* ViewController.swift */,
-				A721DC871FA50601001F53C4 /* Main.storyboard */,
 				A721DC8A1FA50601001F53C4 /* Assets.xcassets */,
-				A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */,
+				A721DCB31FA546F9001F53C4 /* Bus.swift */,
+				A722C38A1FB2A05600185E80 /* BusAnnotation.swift */,
+				A7FED1421FA76CED00D853F0 /* BusStruct.swift */,
+				A755E68E1FA992CB008571C5 /* GeoFire */,
+				A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */,
 				A721DC8F1FA50601001F53C4 /* Info.plist */,
+				A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */,
+				A721DC871FA50601001F53C4 /* Main.storyboard */,
+				A79E5B191FAACDD50038C982 /* Note.swift */,
+				A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */,
+				A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */,
+				A79E5B111FAAAFD70038C982 /* TabBarController.swift */,
+				A72225A41FA635CD0032DF31 /* TableViewCellBus.swift */,
+				A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */,
+				A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */,
+				A721DC851FA50601001F53C4 /* ViewController.swift */,
+				A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */,
+				A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */,
+				A755E6A51FA99472008571C5 /* ViewControllerMap.swift */,
+				A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */,
+				A721DCB11FA542B6001F53C4 /* ViewControllerTables.swift */,
 			);
 			path = Despachador;
 			sourceTree = "<group>";
@@ -125,6 +297,83 @@
 			path = DespachadorUITests;
 			sourceTree = "<group>";
 		};
+		A755E68E1FA992CB008571C5 /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				A755E68F1FA992CB008571C5 /* GeoFire-Prefix.pch */,
+				A755E6901FA992CB008571C5 /* Implementation */,
+				A755E69B1FA992CB008571C5 /* API */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		A755E6901FA992CB008571C5 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				A755E6911FA992CB008571C5 /* GFBase32Utils.h */,
+				A755E6921FA992CB008571C5 /* GFGeoHashQuery.h */,
+				A755E6931FA992CB008571C5 /* GFGeoHash.h */,
+				A755E6941FA992CB008571C5 /* GFQuery+Private.h */,
+				A755E6951FA992CB008571C5 /* GFBase32Utils.m */,
+				A755E6961FA992CB008571C5 /* GeoFire+Private.h */,
+				A755E6971FA992CB008571C5 /* GeoFire.m */,
+				A755E6981FA992CB008571C5 /* GFGeoHashQuery.m */,
+				A755E6991FA992CB008571C5 /* GFQuery.m */,
+				A755E69A1FA992CB008571C5 /* GFGeoHash.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		A755E69B1FA992CB008571C5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A755E69C1FA992CB008571C5 /* GFRegionQuery.h */,
+				A755E69D1FA992CB008571C5 /* GeoFire.h */,
+				A755E69E1FA992CB008571C5 /* GFQuery.h */,
+				A755E69F1FA992CB008571C5 /* GFCircleQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A793C11B1FBE2BD300755263 /* WDespachador */ = {
+			isa = PBXGroup;
+			children = (
+				A793C11C1FBE2BD300755263 /* Interface.storyboard */,
+				A793C11F1FBE2BD300755263 /* Assets.xcassets */,
+				A793C1211FBE2BD300755263 /* Info.plist */,
+			);
+			path = WDespachador;
+			sourceTree = "<group>";
+		};
+		A793C12A1FBE2BD300755263 /* WDespachador Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A793C1341FBE2BD300755263 /* PushNotificationPayload.apns */,
+				A793C1331FBE2BD300755263 /* Info.plist */,
+				A793C1441FBE4DF900755263 /* Bus.swift */,
+				A793C1461FBEA04700755263 /* BusAStruct.swift */,
+				A793C1421FBE48E400755263 /* BusCellWatch.swift */,
+				A793C12D1FBE2BD300755263 /* ExtensionDelegate.swift */,
+				A793C12B1FBE2BD300755263 /* InterfaceController.swift */,
+				A793C1401FBE37C500755263 /* InterfaceControllerDetail.swift */,
+				A707B4AE1FC0E8B700BDE63B /* InterfaceControllerStations.swift */,
+				A793C12F1FBE2BD300755263 /* NotificationController.swift */,
+				A707B4B21FC0EF6F00BDE63B /* Station.swift */,
+				A707B4B01FC0EB6D00BDE63B /* StationCellWatch.swift */,
+				A707B4B41FC1009200BDE63B /* StationWStruct.swift */,
+				A793C1311FBE2BD300755263 /* Assets.xcassets */,
+			);
+			path = "WDespachador Extension";
+			sourceTree = "<group>";
+		};
+		BF456931B9DE233CCF581E41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EE5EBC71BFEA7677D05C0FC /* Pods_Despachador.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,13 +381,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A721DCA81FA50601001F53C4 /* Build configuration list for PBXNativeTarget "Despachador" */;
 			buildPhases = (
+				BF4C10CFDDF283D89A33DAAC /* [CP] Check Pods Manifest.lock */,
 				A721DC7C1FA50601001F53C4 /* Sources */,
 				A721DC7D1FA50601001F53C4 /* Frameworks */,
 				A721DC7E1FA50601001F53C4 /* Resources */,
+				C6131B57971D0CD11F8BF353 /* [CP] Embed Pods Frameworks */,
+				E4CB35341D89FB2971D5285B /* [CP] Copy Pods Resources */,
+				A793C13F1FBE2BD300755263 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A793C1361FBE2BD300755263 /* PBXTargetDependency */,
 			);
 			name = Despachador;
 			productName = Despachador;
@@ -181,6 +435,40 @@
 			productReference = A721DC9F1FA50601001F53C4 /* DespachadorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A793C1191FBE2BD300755263 /* WDespachador */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A793C13E1FBE2BD300755263 /* Build configuration list for PBXNativeTarget "WDespachador" */;
+			buildPhases = (
+				A793C1181FBE2BD300755263 /* Resources */,
+				A793C13D1FBE2BD300755263 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A793C1291FBE2BD300755263 /* PBXTargetDependency */,
+			);
+			name = WDespachador;
+			productName = WDespachador;
+			productReference = A793C11A1FBE2BD300755263 /* WDespachador.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A793C1251FBE2BD300755263 /* WDespachador Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A793C13C1FBE2BD300755263 /* Build configuration list for PBXNativeTarget "WDespachador Extension" */;
+			buildPhases = (
+				A793C1221FBE2BD300755263 /* Sources */,
+				A793C1231FBE2BD300755263 /* Frameworks */,
+				A793C1241FBE2BD300755263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WDespachador Extension";
+			productName = "WDespachador Extension";
+			productReference = A793C1261FBE2BD300755263 /* WDespachador Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +493,14 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = A721DC7F1FA50601001F53C4;
 					};
+					A793C1191FBE2BD300755263 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					A793C1251FBE2BD300755263 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = A721DC7B1FA50601001F53C4 /* Build configuration list for PBXProject "Despachador" */;
@@ -223,6 +519,8 @@
 				A721DC7F1FA50601001F53C4 /* Despachador */,
 				A721DC931FA50601001F53C4 /* DespachadorTests */,
 				A721DC9E1FA50601001F53C4 /* DespachadorUITests */,
+				A793C1191FBE2BD300755263 /* WDespachador */,
+				A793C1251FBE2BD300755263 /* WDespachador Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A721DC8E1FA50601001F53C4 /* LaunchScreen.storyboard in Resources */,
+				A7339A9F1FA9768A00768B1D /* GoogleService-Info.plist in Resources */,
 				A721DC8B1FA50601001F53C4 /* Assets.xcassets in Resources */,
 				A721DC891FA50601001F53C4 /* Main.storyboard in Resources */,
 			);
@@ -252,15 +551,100 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A793C1181FBE2BD300755263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A793C1201FBE2BD300755263 /* Assets.xcassets in Resources */,
+				A793C11E1FBE2BD300755263 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A793C1241FBE2BD300755263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A793C1321FBE2BD300755263 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF4C10CFDDF283D89A33DAAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6131B57971D0CD11F8BF353 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Despachador/Pods-Despachador-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4CB35341D89FB2971D5285B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Despachador/Pods-Despachador-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A721DC7C1FA50601001F53C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A755E6A01FA992CB008571C5 /* GFBase32Utils.m in Sources */,
+				A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */,
+				A7EABF4E1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift in Sources */,
 				A721DC861FA50601001F53C4 /* ViewController.swift in Sources */,
+				A721DCB21FA542B6001F53C4 /* ViewControllerTables.swift in Sources */,
+				A755E6A21FA992CB008571C5 /* GFGeoHashQuery.m in Sources */,
+				A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */,
+				A7FED13F1FA6ED5400D853F0 /* ViewControllerBusDetail.swift in Sources */,
+				A72225A51FA635CD0032DF31 /* TableViewCellBus.swift in Sources */,
+				A721DCB41FA546F9001F53C4 /* Bus.swift in Sources */,
+				A7EB01071FB8DCE7002B0FDD /* StationStruct.swift in Sources */,
 				A721DC841FA50601001F53C4 /* AppDelegate.swift in Sources */,
+				A755E6A61FA99472008571C5 /* ViewControllerMap.swift in Sources */,
+				A722C38B1FB2A05600185E80 /* BusAnnotation.swift in Sources */,
+				A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */,
+				A755E6A11FA992CB008571C5 /* GeoFire.m in Sources */,
+				A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */,
+				A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */,
+				A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */,
+				A755E6A31FA992CB008571C5 /* GFQuery.m in Sources */,
+				A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */,
+				A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +664,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A793C1221FBE2BD300755263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A793C1451FBE4DF900755263 /* Bus.swift in Sources */,
+				A793C1471FBEA04700755263 /* BusAStruct.swift in Sources */,
+				A707B4AF1FC0E8B700BDE63B /* InterfaceControllerStations.swift in Sources */,
+				A793C1301FBE2BD300755263 /* NotificationController.swift in Sources */,
+				A793C12E1FBE2BD300755263 /* ExtensionDelegate.swift in Sources */,
+				A793C1411FBE37C500755263 /* InterfaceControllerDetail.swift in Sources */,
+				A707B4B31FC0EF6F00BDE63B /* Station.swift in Sources */,
+				A793C12C1FBE2BD300755263 /* InterfaceController.swift in Sources */,
+				A707B4B11FC0EB6D00BDE63B /* StationCellWatch.swift in Sources */,
+				A707B4B51FC1009200BDE63B /* StationWStruct.swift in Sources */,
+				A793C1431FBE48E400755263 /* BusCellWatch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,6 +694,16 @@
 			isa = PBXTargetDependency;
 			target = A721DC7F1FA50601001F53C4 /* Despachador */;
 			targetProxy = A721DCA01FA50601001F53C4 /* PBXContainerItemProxy */;
+		};
+		A793C1291FBE2BD300755263 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A793C1251FBE2BD300755263 /* WDespachador Extension */;
+			targetProxy = A793C1281FBE2BD300755263 /* PBXContainerItemProxy */;
+		};
+		A793C1361FBE2BD300755263 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A793C1191FBE2BD300755263 /* WDespachador */;
+			targetProxy = A793C1351FBE2BD300755263 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -310,6 +722,14 @@
 				A721DC8D1FA50601001F53C4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A793C11C1FBE2BD300755263 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A793C11D1FBE2BD300755263 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -424,6 +844,7 @@
 		};
 		A721DCA91FA50601001F53C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE16AA09CF6FB24040B811FD /* Pods-Despachador.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,6 +853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Despachador/Despachador-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +861,7 @@
 		};
 		A721DCAA1FA50601001F53C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E8B7088F9D64D1FD981E022 /* Pods-Despachador.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Despachador/Despachador-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,6 +942,80 @@
 			};
 			name = Release;
 		};
+		A793C1381FBE2BD300755263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BRSAP5SZ3;
+				IBSC_MODULE = WDespachador_Extension;
+				INFOPLIST_FILE = WDespachador/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		A793C1391FBE2BD300755263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BRSAP5SZ3;
+				IBSC_MODULE = WDespachador_Extension;
+				INFOPLIST_FILE = WDespachador/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		A793C13A1FBE2BD300755263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BRSAP5SZ3;
+				INFOPLIST_FILE = "WDespachador Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		A793C13B1FBE2BD300755263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BRSAP5SZ3;
+				INFOPLIST_FILE = "WDespachador Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MBG.Despachador.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +1051,24 @@
 			buildConfigurations = (
 				A721DCAF1FA50601001F53C4 /* Debug */,
 				A721DCB01FA50601001F53C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A793C13C1FBE2BD300755263 /* Build configuration list for PBXNativeTarget "WDespachador Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A793C13A1FBE2BD300755263 /* Debug */,
+				A793C13B1FBE2BD300755263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A793C13E1FBE2BD300755263 /* Build configuration list for PBXNativeTarget "WDespachador" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A793C1381FBE2BD300755263 /* Debug */,
+				A793C1391FBE2BD300755263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

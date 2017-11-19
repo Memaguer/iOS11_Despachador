@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E6N-2n-fJD">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew-Bold</string>
+        </array>
+        <array key="CourierNewBold.ttf">
+            <string>CourierNewPS-BoldMT</string>
+        </array>
+        <array key="MyanmarSangamMN.ttc">
+            <string>MyanmarSangamMN-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Interface Controller Stations-->
+        <scene sceneID="NVb-bq-FzY">
+            <objects>
+                <controller id="E6N-2n-fJD" customClass="InterfaceControllerStations" customModule="WDespachador_Extension">
+                    <items>
+                        <table alignment="left" id="a5P-VX-n6m">
+                            <items>
+                                <tableRow identifier="StationRow" id="ASm-Hc-ROG" customClass="StationCellWatch" customModule="WDespachador_Extension">
+                                    <group key="rootItem" width="1" height="55" alignment="left" spacing="8" id="0eC-ow-vNF">
+                                        <items>
+                                            <imageView width="54" height="48" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="2eg-ky-7Cr"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" textAlignment="left" numberOfLines="0" id="Ad0-jm-vGz">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="2eg-ky-7Cr" id="sq2-fd-zjF"/>
+                                        <outlet property="name" destination="Ad0-jm-vGz" id="met-Mu-JYU"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="czC-Xo-xLq"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label alignment="center" verticalAlignment="center" text="Cargando..." id="QHv-zq-S9D"/>
+                    </items>
+                    <connections>
+                        <outlet property="loandingLabel" destination="QHv-zq-S9D" id="Tqi-7C-OCV"/>
+                        <outlet property="stationTable" destination="a5P-VX-n6m" id="yQV-xX-hQE"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-116" y="322"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WDespachador" customModuleProvider="target">
+                    <items>
+                        <label width="118" alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="MjU-c5-21K">
+                            <fontDescription key="font" name="CourierNewPS-BoldMT" family="Courier New" pointSize="21"/>
+                        </label>
+                        <separator alignment="left" id="Ghh-bw-yeo"/>
+                        <group width="111" alignment="center" spacing="4" id="KCq-jl-Amg">
+                            <items>
+                                <label width="30" height="26" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="SSo-F6-cRy">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="32"/>
+                                </label>
+                                <label alignment="center" text="pasajeros esperando" textAlignment="left" numberOfLines="0" id="hsW-JW-4jv">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                        <table alignment="left" id="4sE-L0-jcv">
+                            <items>
+                                <tableRow identifier="BusRow" id="BU0-dZ-moN" customClass="BusCellWatch" customModule="WDespachador_Extension">
+                                    <group key="rootItem" width="1" height="47" alignment="left" spacing="16" id="VvI-7a-aeX">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="center" verticalAlignment="center" contentMode="redraw" id="OfW-tQ-Wia"/>
+                                            <group alignment="center" verticalAlignment="center" layout="vertical" id="tni-2J-UAt">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="aEg-CW-7XC">
+                                                        <fontDescription key="font" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="15"/>
+                                                    </label>
+                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="09m-mJ-WXw">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="OfW-tQ-Wia" id="6yw-ro-EI1"/>
+                                        <outlet property="plates" destination="aEg-CW-7XC" id="8aV-H5-91R"/>
+                                        <outlet property="time" destination="09m-mJ-WXw" id="7CW-yn-vhz"/>
+                                        <segue destination="ToF-VJ-nEe" kind="push" id="CMH-dd-pgP"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="amountPeople" destination="SSo-F6-cRy" id="0pz-mo-rXA"/>
+                        <outlet property="stationName" destination="MjU-c5-21K" id="78Y-8Z-jBO"/>
+                        <outlet property="table" destination="4sE-L0-jcv" id="Hxc-D4-uWS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="322"/>
+        </scene>
+        <!--Interface Controller Detail-->
+        <scene sceneID="quS-ea-o6k">
+            <objects>
+                <controller spacing="4" id="ToF-VJ-nEe" customClass="InterfaceControllerDetail" customModule="WDespachador_Extension">
+                    <items>
+                        <imageView width="130" height="100" alignment="center" contentMode="scaleAspectFill" id="2SS-bU-nOr"/>
+                        <label alignment="left" text="Información:" id="q5k-vG-1Q0">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <separator alignment="left" id="yev-Wt-U4N"/>
+                        <group width="1" alignment="left" spacing="1" id="bM7-7r-fix">
+                            <items>
+                                <label alignment="left" text="Tiempo:" textAlignment="left" id="H2n-06-ho7">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="eCq-1s-ZWU">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" id="8Uc-Wh-vxi">
+                            <items>
+                                <label alignment="left" text="Distancia:" id="w7n-gV-iYv">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="ou4-YJ-ZOa">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" id="Yg9-Hc-kSM">
+                            <items>
+                                <label alignment="left" text="Capacidad:" id="MCZ-nV-YJD">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="lA5-qV-Ij8">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.59999999999999998" alpha="0.91845034246575341" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="U3a-UW-Cgp">
+                            <items>
+                                <label alignment="left" text="Conductor:" id="UeG-Gw-q4c">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                                <label alignment="left" text="Label" id="2MG-Wt-LHl">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="capacity" destination="lA5-qV-Ij8" id="AYe-w1-np4"/>
+                        <outlet property="distance" destination="ou4-YJ-ZOa" id="cgS-gj-fl2"/>
+                        <outlet property="driver" destination="2MG-Wt-LHl" id="zeo-Nx-nnA"/>
+                        <outlet property="image" destination="2SS-bU-nOr" id="Xcd-h9-2hL"/>
+                        <outlet property="time" destination="eCq-1s-ZWU" id="HVY-sZ-ABC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="513" y="288"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WDespachador" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
