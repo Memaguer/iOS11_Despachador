@@ -8,14 +8,16 @@
 
 import UIKit
 import FirebaseDatabase
+import CoreData
 
 class ViewControllerBook: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
-    var notes: [Note] = []
+    var notes: [Log] = []
+    var category: String!
     
-    var filteredData: [Note] = []
+    var filteredData: [Log] = []
     var isSearching = false
     
     var ref: DatabaseReference?
@@ -25,7 +27,7 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
         
         super.viewDidLoad()
         
-        var note = Note(title: "Sale camión de base", date:"2/11/2017", category: "Unidad", detail:"El camión FRE-432 salió a las 2:34. El camíon lo manejaba Armando Contreras. Estuvo detenido 5 minutos en la base.")
+        /*var note = Note(title: "Sale camión de base", date:"2/11/2017", category: "Unidad", detail:"El camión FRE-432 salió a las 2:34. El camíon lo manejaba Armando Contreras. Estuvo detenido 5 minutos en la base.")
         notes.append(note)
         note = Note(title: "Camión con choque", date:"2/11/2017", category: "Unidad", detail:"El camión ZBT-646 chocó en Tlalpan y Xola. No hubo heridos pero la unidad necesita ser transportada al despacho más cercano. El condutor de la unidad es Rafael Figueroa")
         notes.append(note)
@@ -34,14 +36,21 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
         note = Note(title: "5 personas esperando en base", date:"2/11/2017", category: "Pasajeros", detail:"No han apasado unidades hace 15 min. Hay personas esperaando en al despacho del Estadio Azteca")
         notes.append(note)
         note = Note(title: "Cambio de turno", date:"2/11/2017", category: "Despachador", detail:"Cambio de turno en el depacho. Jonathan Lozano sale a las 4:32 y entra por su parte Luis Martínes")
-        notes.append(note)
+        notes.append(note)*/
         
         self.searchBar.delegate = self
         self.searchBar.placeholder = "Buscar en bitácora"
         
         tableSettings()
         
-        getBusesFromFirebase()
+        //getBusesFromFirebase()
+        
+        let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()
+        do {
+            let logs = try PersistenceService.context.fetch(fetchRequest)
+            self.notes = logs
+            self.tableView.reloadData()
+        } catch {}
         
     }
 
@@ -55,9 +64,8 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         self.filteredData = self.notes.filter({ (note) -> Bool in
-            if note.title.lowercased().contains(self.searchBar.text!.lowercased()){
+            if (note.title?.lowercased().contains(self.searchBar.text!.lowercased()))!{
                 return true
             }else{
                 return false
@@ -71,10 +79,9 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
         self.tableView.reloadData()
     }
     
-    func getBusesFromFirebase(){
+    /*func getBusesFromFirebase(){
         ref = Database.database().reference()
         databaseHandle = ref?.child("notes").observe(.childAdded, with: { (snapshot) in
-            
             if let dictionary = snapshot.value as? [String: AnyObject]{
                 print(dictionary)
                 print(dictionary.count)
@@ -86,8 +93,113 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
                 self.notes.append(note)
             }
         })
+    }*/
+    
+    @IBAction func AddNote(_ sender: Any) {
+        let alert = UIAlertController(title: "Categoría", message: "Selecciona la categoría de bitácora", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Unidades", style: .default, handler: { (action) -> Void in
+            self.category = "Unidades"
+            self.showAlertForm()
+        })
+        let action2 = UIAlertAction(title: "Pasajeros", style: .default, handler: { (action) -> Void in
+            self.category = "Pasajeros"
+            self.showAlertForm()
+        })
+        let action3 = UIAlertAction(title: "Estación", style: .default, handler: { (action) -> Void in
+            self.category = "Estación"
+            self.showAlertForm()
+        })
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { (action) -> Void in })
+        // Add action buttons and present the Alert
+        alert.addAction(action1)
+        alert.addAction(action2)
+        alert.addAction(action3)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
-
+    
+    func showAlertForm(){
+        /*let alertB = UIAlertController(title: "Agregar nota", message: "Llena todos los campos para registrar una nota", preferredStyle:.alert)
+        alertB.addTextField{ (textField) in
+            textField.placeholder = "Título"
+        }
+        alertB.addTextField{ (UITextField) in
+            UITextField.placeholder = "Descripción"
+        }
+        let action = UIAlertAction(title: "Publicar", style: .default){ (_) in
+            let name = alertB.textFields!.first!.text!
+            let age = alertB.textFields!.last!.text!
+            print(name)
+            print(age)
+        }
+        alertB.addAction(action)
+        present(alertB, animated: true, completion: nil)*/
+        
+        
+        
+        
+        
+        let alert = UIAlertController(title: "Agregar nota", message: "Introduzca todos los campos para registrar una nota", preferredStyle: .alert)
+        
+        // Login button
+        let publishAction = UIAlertAction(title: "Publicar", style: .default, handler: { (action) -> Void in
+            // Get TextFields text
+            let title = alert.textFields![0]
+            let detail = alert.textFields![1]
+            
+            print("Title: \(title.text!)\nDescription: \(detail.text!)")
+            if title.text != nil && detail.text != nil {
+                let log = Log(context: PersistenceService.context)
+                log.title = title.text
+                log.detail = detail.text
+                log.category = self.category
+                log.date = "20/11/2017"
+                PersistenceService.saveContext()
+                self.notes.append(log)
+                self.tableView.reloadData()
+            }
+        })
+        
+        
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { (action) -> Void in })
+        
+        
+        // Add 1 textField (for username)
+        alert.addTextField { (textField: UITextField) in
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.placeholder = "Escribe un título"
+        }
+        
+        
+        // Add 2nd textField (for password)
+        /*alert.addTextField { (textField: UITextField) in
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.placeholder = "Type your password"
+            textField.isSecureTextEntry = true
+        }*/
+        
+        
+        // Add 3rd textField (for phone no.)
+        alert.addTextField { (textField: UITextField) in
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.placeholder = "Escribe una descripción"
+        }
+        
+        
+        // Add action buttons and present the Alert
+        alert.addAction(cancel)
+        alert.addAction(publishAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewControllerBook : UITableViewDataSource{
@@ -101,30 +213,27 @@ extension ViewControllerBook : UITableViewDataSource{
         if isSearching {
             return filteredData.count
         }
-        
         return self.notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellId = "NoteCell"
-        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableViewCellNote
-        
-        let note: Note
+        let note: Log
         
         if isSearching {
             note = filteredData[indexPath.row]
             cell.title.text = note.title
             cell.date.text = note.date
-            cell.imageNote.image = note.image
+            //cell.imageNote.image = note.image
             
             return cell
         } else {
             note = notes[indexPath.row]
             cell.title.text = note.title
             cell.date.text = note.date
-            cell.imageNote.image = note.image
+            //cell.imageNote.image = note.image
             
             return cell
         }
@@ -163,7 +272,6 @@ extension ViewControllerBook : UITableViewDataSource{
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNoteDetail"{
             if let indexPath = self.tableView.indexPathForSelectedRow{
@@ -173,7 +281,4 @@ extension ViewControllerBook : UITableViewDataSource{
             }
         }
     }
-    
-    
-    
 }

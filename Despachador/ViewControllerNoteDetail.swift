@@ -16,7 +16,7 @@ class ViewControllerNoteDetail: UIViewController {
     @IBOutlet var detailNote: UITextView!
     @IBOutlet var category: UILabel!
     
-    var note: Note!
+    var note: Log!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,8 @@ class ViewControllerNoteDetail: UIViewController {
         self.date.text = self.note.date
         self.category.text = self.note.category
         self.detailNote.text = self.note.detail
-        self.image.image = self.note.image
+        //self.image.image = self.note.image
+        self.image.image = #imageLiteral(resourceName: "bus-wait")
         
         self.navigationController?.navigationBar.tintColor = UIColor.white;
     }

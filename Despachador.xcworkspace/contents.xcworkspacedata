@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Despachador.xcodeproj">
    </FileRef>
    <FileRef

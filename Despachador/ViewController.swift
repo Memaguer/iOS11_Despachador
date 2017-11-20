@@ -10,13 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet var rutePickerView: UIPickerView!
     @IBOutlet var stationPickerView: UIPickerView!
-    
-    let rutes = ["Selecciona tu ruta", "Izazaga - Xochimilco", "Xochimilco - Izazaga"];
-    let stations = ["Selecciona tu estación", "Izazaga", "Xola", "Gnrl. Anaya", "Estadio Azteca", "Xochimilco"];
-    var routeId: Int = 0;
+    let stations = ["Selecciona tu estación", "Izazaga", "Xola", "General Anaya", "Huipulco", "Nicolas Bravo", "Xochimilco", "La Noria", "Periférico", "Estadio Azteca", "Viaducto"];
     var stationId: Int = 0;
+    var station: Station!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,53 +30,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if(pickerView == rutePickerView){
-            return rutes[row]
-        }
-        else{
-            return stations[row]
-        }
+        return stations[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerView == rutePickerView){
-            return rutes.count
-        }
-        else{
-            return stations.count
-        }
+        return stations.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(pickerView == rutePickerView){
-            print(rutes[row])
-            self.routeId = row
-        }
-        else{
-            print(stations[row])
-            self.stationId = row
-        }
+        station = Station(id: row, name: stations[row])
+        self.stationId = row
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        if(pickerView == rutePickerView){
-            let route = rutes[row]
-            let routeName = NSAttributedString(string: route, attributes: [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 15.0)!,NSAttributedStringKey.foregroundColor:UIColor.white])
-            return routeName
-        }
-        else{
-            let station = stations[row]
-            let stationName = NSAttributedString(string: station, attributes: [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 15.0)!,NSAttributedStringKey.foregroundColor:UIColor.white])
-            return stationName
+        let station = stations[row]
+        let stationName = NSAttributedString(string: station, attributes: [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 20.0)!,NSAttributedStringKey.foregroundColor:UIColor.white])
+        return stationName
+    }
+    
+    @IBAction func startAction(_ sender: Any) {
+        if self.stationId != 0 {
+            performSegue(withIdentifier: "stationSegue", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "stationSegue"{
-            let table = segue.destination as! TabBarController
-            table.routeId = self.routeId;
-            table.stationId = self.stationId
-        }
+        let loadingView = segue.destination as! ViewControllerLoadingStation
+        loadingView.station = self.station
     }
     
 

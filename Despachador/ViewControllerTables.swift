@@ -1,3 +1,4 @@
+
 //
 //  ViewControllerTables.swift
 //  Despachador
@@ -5,7 +6,6 @@
 //  Created by MBG on 10/28/17.
 //  Copyright © 2017 MBG. All rights reserved.
 //
-
 import UIKit
 import FirebaseDatabase
 
@@ -17,7 +17,7 @@ class ViewControllerTables: UIViewController{
     var nextBuses: [Bus] = []
     var actualBuses: [Bus] = []
     var onRouteBuses : [Bus] = []
-
+    
     var postData = [String] ()
     
     var routeId: Int?
@@ -28,7 +28,7 @@ class ViewControllerTables: UIViewController{
     
     let urlSession: URLSession = URLSession(configuration: .default)
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +45,7 @@ class ViewControllerTables: UIViewController{
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,6 +64,15 @@ class ViewControllerTables: UIViewController{
                     print(buses.result)
                     for bus in buses.result {
                         print(bus.licensePlate)
+                        let newBus = Bus(licensePlate: bus.licensePlate, driver: bus.driver, distance: bus.distance, capacity: bus.capacity, time: bus.time)
+                        if bus.station < 4 {
+                            self.nextBuses.append(newBus)
+                        } else if bus.station > 4 {
+                            self.onRouteBuses.append(newBus)
+                        }
+                        else{
+                            self.actualBuses.append(newBus)
+                        }
                     }
                 } catch{
                     print(error.localizedDescription)
@@ -98,7 +107,7 @@ class ViewControllerTables: UIViewController{
             }
         })
     }
-
+    
     @IBAction func switchTableAction(_ sender: UISegmentedControl) {
         segmentSelected = sender.selectedSegmentIndex
         

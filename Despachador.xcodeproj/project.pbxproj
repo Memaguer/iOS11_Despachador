@@ -30,6 +30,8 @@
 		A755E6A31FA992CB008571C5 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E6991FA992CB008571C5 /* GFQuery.m */; };
 		A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = A755E69A1FA992CB008571C5 /* GFGeoHash.m */; };
 		A755E6A61FA99472008571C5 /* ViewControllerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A755E6A51FA99472008571C5 /* ViewControllerMap.swift */; };
+		A78D3E781FC229E4006EE771 /* ViewControllerLoadingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D3E771FC229E4006EE771 /* ViewControllerLoadingStation.swift */; };
+		A78D3E7A1FC22C3B006EE771 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D3E791FC22C3B006EE771 /* Station.swift */; };
 		A793C11E1FBE2BD300755263 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A793C11C1FBE2BD300755263 /* Interface.storyboard */; };
 		A793C1201FBE2BD300755263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A793C11F1FBE2BD300755263 /* Assets.xcassets */; };
 		A793C1271FBE2BD300755263 /* WDespachador Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A793C1261FBE2BD300755263 /* WDespachador Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -42,6 +44,10 @@
 		A793C1431FBE48E400755263 /* BusCellWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1421FBE48E400755263 /* BusCellWatch.swift */; };
 		A793C1451FBE4DF900755263 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1441FBE4DF900755263 /* Bus.swift */; };
 		A793C1471FBEA04700755263 /* BusAStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793C1461FBEA04700755263 /* BusAStruct.swift */; };
+		A799032A1FC272660097978C /* NotesCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A79903281FC272660097978C /* NotesCore.xcdatamodeld */; };
+		A799032C1FC2740D0097978C /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A799032B1FC2740D0097978C /* PersistenceService.swift */; };
+		A79903341FC357BB0097978C /* Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79903331FC357BA0097978C /* Log+CoreDataClass.swift */; };
+		A79903361FC357CA0097978C /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */; };
 		A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B111FAAAFD70038C982 /* TabBarController.swift */; };
 		A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */; };
 		A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */; };
@@ -152,6 +158,8 @@
 		A755E69E1FA992CB008571C5 /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
 		A755E69F1FA992CB008571C5 /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
 		A755E6A51FA99472008571C5 /* ViewControllerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMap.swift; sourceTree = "<group>"; };
+		A78D3E771FC229E4006EE771 /* ViewControllerLoadingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLoadingStation.swift; sourceTree = "<group>"; };
+		A78D3E791FC22C3B006EE771 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		A793C11A1FBE2BD300755263 /* WDespachador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDespachador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A793C11D1FBE2BD300755263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		A793C11F1FBE2BD300755263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +175,10 @@
 		A793C1421FBE48E400755263 /* BusCellWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusCellWatch.swift; sourceTree = "<group>"; };
 		A793C1441FBE4DF900755263 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		A793C1461FBEA04700755263 /* BusAStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusAStruct.swift; sourceTree = "<group>"; };
+		A79903291FC272660097978C /* NotesCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesCore.xcdatamodel; sourceTree = "<group>"; };
+		A799032B1FC2740D0097978C /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		A79903331FC357BA0097978C /* Log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataClass.swift"; path = "/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataProperties.swift"; path = "/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		A79E5B111FAAAFD70038C982 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTable.swift; sourceTree = "<group>"; };
 		A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBook.swift; sourceTree = "<group>"; };
@@ -252,17 +264,16 @@
 		A721DC821FA50601001F53C4 /* Despachador */ = {
 			isa = PBXGroup;
 			children = (
+				A79903331FC357BA0097978C /* Log+CoreDataClass.swift */,
+				A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */,
+				A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */,
+				A721DC8F1FA50601001F53C4 /* Info.plist */,
 				A721DC831FA50601001F53C4 /* AppDelegate.swift */,
-				A721DC8A1FA50601001F53C4 /* Assets.xcassets */,
 				A721DCB31FA546F9001F53C4 /* Bus.swift */,
 				A722C38A1FB2A05600185E80 /* BusAnnotation.swift */,
 				A7FED1421FA76CED00D853F0 /* BusStruct.swift */,
-				A755E68E1FA992CB008571C5 /* GeoFire */,
-				A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */,
-				A721DC8F1FA50601001F53C4 /* Info.plist */,
-				A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */,
-				A721DC871FA50601001F53C4 /* Main.storyboard */,
 				A79E5B191FAACDD50038C982 /* Note.swift */,
+				A78D3E791FC22C3B006EE771 /* Station.swift */,
 				A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */,
 				A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */,
 				A79E5B111FAAAFD70038C982 /* TabBarController.swift */,
@@ -272,9 +283,16 @@
 				A721DC851FA50601001F53C4 /* ViewController.swift */,
 				A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */,
 				A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */,
+				A78D3E771FC229E4006EE771 /* ViewControllerLoadingStation.swift */,
 				A755E6A51FA99472008571C5 /* ViewControllerMap.swift */,
 				A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */,
 				A721DCB11FA542B6001F53C4 /* ViewControllerTables.swift */,
+				A721DC8A1FA50601001F53C4 /* Assets.xcassets */,
+				A755E68E1FA992CB008571C5 /* GeoFire */,
+				A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */,
+				A721DC871FA50601001F53C4 /* Main.storyboard */,
+				A79903281FC272660097978C /* NotesCore.xcdatamodeld */,
+				A799032B1FC2740D0097978C /* PersistenceService.swift */,
 			);
 			path = Despachador;
 			sourceTree = "<group>";
@@ -628,10 +646,14 @@
 				A7EABF4E1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift in Sources */,
 				A721DC861FA50601001F53C4 /* ViewController.swift in Sources */,
 				A721DCB21FA542B6001F53C4 /* ViewControllerTables.swift in Sources */,
+				A799032C1FC2740D0097978C /* PersistenceService.swift in Sources */,
 				A755E6A21FA992CB008571C5 /* GFGeoHashQuery.m in Sources */,
+				A78D3E781FC229E4006EE771 /* ViewControllerLoadingStation.swift in Sources */,
 				A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */,
 				A7FED13F1FA6ED5400D853F0 /* ViewControllerBusDetail.swift in Sources */,
 				A72225A51FA635CD0032DF31 /* TableViewCellBus.swift in Sources */,
+				A78D3E7A1FC22C3B006EE771 /* Station.swift in Sources */,
+				A79903361FC357CA0097978C /* Log+CoreDataProperties.swift in Sources */,
 				A721DCB41FA546F9001F53C4 /* Bus.swift in Sources */,
 				A7EB01071FB8DCE7002B0FDD /* StationStruct.swift in Sources */,
 				A721DC841FA50601001F53C4 /* AppDelegate.swift in Sources */,
@@ -639,12 +661,14 @@
 				A722C38B1FB2A05600185E80 /* BusAnnotation.swift in Sources */,
 				A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */,
 				A755E6A11FA992CB008571C5 /* GeoFire.m in Sources */,
+				A79903341FC357BB0097978C /* Log+CoreDataClass.swift in Sources */,
 				A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */,
 				A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */,
 				A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */,
 				A755E6A31FA992CB008571C5 /* GFQuery.m in Sources */,
 				A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */,
 				A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */,
+				A799032A1FC272660097978C /* NotesCore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,6 +1098,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A79903281FC272660097978C /* NotesCore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A79903291FC272660097978C /* NotesCore.xcdatamodel */,
+			);
+			currentVersion = A79903291FC272660097978C /* NotesCore.xcdatamodel */;
+			path = NotesCore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A721DC781FA50601001F53C4 /* Project object */;
 }
