@@ -121,25 +121,6 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
     }
     
     func showAlertForm(){
-        /*let alertB = UIAlertController(title: "Agregar nota", message: "Llena todos los campos para registrar una nota", preferredStyle:.alert)
-        alertB.addTextField{ (textField) in
-            textField.placeholder = "Título"
-        }
-        alertB.addTextField{ (UITextField) in
-            UITextField.placeholder = "Descripción"
-        }
-        let action = UIAlertAction(title: "Publicar", style: .default){ (_) in
-            let name = alertB.textFields!.first!.text!
-            let age = alertB.textFields!.last!.text!
-            print(name)
-            print(age)
-        }
-        alertB.addAction(action)
-        present(alertB, animated: true, completion: nil)*/
-        
-        
-        
-        
         
         let alert = UIAlertController(title: "Agregar nota", message: "Introduzca todos los campos para registrar una nota", preferredStyle: .alert)
         
@@ -162,10 +143,8 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
             }
         })
         
-        
         // Cancel button
         let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { (action) -> Void in })
-        
         
         // Add 1 textField (for username)
         alert.addTextField { (textField: UITextField) in
@@ -174,17 +153,6 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
             textField.autocorrectionType = .default
             textField.placeholder = "Escribe un título"
         }
-        
-        
-        // Add 2nd textField (for password)
-        /*alert.addTextField { (textField: UITextField) in
-            textField.keyboardAppearance = .dark
-            textField.keyboardType = .default
-            textField.placeholder = "Type your password"
-            textField.isSecureTextEntry = true
-        }*/
-        
-        
         // Add 3rd textField (for phone no.)
         alert.addTextField { (textField: UITextField) in
             textField.keyboardAppearance = .dark
@@ -192,7 +160,6 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
             textField.autocorrectionType = .default
             textField.placeholder = "Escribe una descripción"
         }
-        
         
         // Add action buttons and present the Alert
         alert.addAction(cancel)
@@ -202,7 +169,7 @@ class ViewControllerBook: UIViewController, UISearchBarDelegate {
     
 }
 
-extension ViewControllerBook : UITableViewDataSource{
+extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -227,49 +194,32 @@ extension ViewControllerBook : UITableViewDataSource{
             cell.title.text = note.title
             cell.date.text = note.date
             //cell.imageNote.image = note.image
-            
             return cell
         } else {
             note = notes[indexPath.row]
             cell.title.text = note.title
             cell.date.text = note.date
             //cell.imageNote.image = note.image
-            
             return cell
         }
     }
     
-    /*func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        //Compartir
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // Share
         let shareAction = UITableViewRowAction(style: .normal, title: "compartir") { (action, indexPath) in
             let shareMessage = "\(self.notes[indexPath.row])"
             let shareController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
             self.present(shareController, animated: true, completion: nil)
         }
         shareAction.backgroundColor = UIColor.orange
-        
-        //Eliminar
-        
+        // Delete
         let deleteAction = UITableViewRowAction(style: .default, title: "eliminar") { (action, indexPath) in
+            PersistenceService.context.delete(self.notes[indexPath.row])
+            PersistenceService.saveContext()
             self.notes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
         return [shareAction, deleteAction]
-    }*/
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete{
-            self.notes.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            /*let shareMessage = "\(self.notes[indexPath.row])"
-            let shareController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
-            self.present(shareController, animated: true, completion: nil)*/
-        }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
