@@ -12,6 +12,7 @@ class TableViewCellNote: UITableViewCell {
     @IBOutlet var imageNote: UIImageView!
     @IBOutlet var title: UILabel!
     @IBOutlet var date: UILabel!
+    @IBOutlet var time: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

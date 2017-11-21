@@ -20,5 +20,6 @@ extension Log {
     @NSManaged public var date: String?
     @NSManaged public var category: String?
     @NSManaged public var detail: String?
+    @NSManaged public var time: String?
 
 }

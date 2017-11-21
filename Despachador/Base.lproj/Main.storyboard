@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -192,19 +191,28 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hHl-Z6-uV9">
-                                                    <rect key="frame" x="123" y="18" width="234" height="44"/>
+                                                    <rect key="frame" x="133" y="13" width="224" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-7H-5tk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="a1E-Lp-2id"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2E-ZF-nDB">
-                                                            <rect key="frame" x="0.0" y="24" width="234" height="20"/>
+                                                            <rect key="frame" x="0.0" y="21" width="224" height="17"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="s2E-ZF-nDB" secondAttribute="height" multiplier="117:10" id="rnI-QS-bAK"/>
+                                                                <constraint firstAttribute="height" constant="17" id="4Ad-71-bnb"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTZ-RS-8wZ">
+                                                            <rect key="frame" x="0.0" y="38" width="224" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -215,16 +223,17 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hHl-Z6-uV9" secondAttribute="trailing" constant="10" id="3dN-1T-qCr"/>
                                                 <constraint firstItem="Vc0-92-Wcu" firstAttribute="top" secondItem="gM1-sd-GtB" secondAttribute="top" constant="5" id="3rI-eg-Egz"/>
-                                                <constraint firstItem="hHl-Z6-uV9" firstAttribute="top" secondItem="gM1-sd-GtB" secondAttribute="topMargin" constant="10" id="DSu-DB-e59"/>
+                                                <constraint firstItem="hHl-Z6-uV9" firstAttribute="top" secondItem="gM1-sd-GtB" secondAttribute="topMargin" constant="5" id="DSu-DB-e59"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vc0-92-Wcu" secondAttribute="bottom" constant="5" id="FZc-E2-ZXD"/>
-                                                <constraint firstItem="hHl-Z6-uV9" firstAttribute="leading" secondItem="Vc0-92-Wcu" secondAttribute="trailing" constant="10" id="MNP-Pr-drv"/>
+                                                <constraint firstItem="hHl-Z6-uV9" firstAttribute="leading" secondItem="Vc0-92-Wcu" secondAttribute="trailing" constant="20" id="MNP-Pr-drv"/>
                                                 <constraint firstItem="Vc0-92-Wcu" firstAttribute="leading" secondItem="gM1-sd-GtB" secondAttribute="leading" constant="40" id="NFv-XD-NOR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hHl-Z6-uV9" secondAttribute="bottom" constant="10" id="bP9-2Y-LpY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hHl-Z6-uV9" secondAttribute="bottom" constant="5" id="bP9-2Y-LpY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="date" destination="s2E-ZF-nDB" id="4ON-nR-1sa"/>
                                             <outlet property="imageNote" destination="Vc0-92-Wcu" id="Gle-Ce-X0B"/>
+                                            <outlet property="time" destination="CTZ-RS-8wZ" id="1O8-3s-dKi"/>
                                             <outlet property="title" destination="gu1-7H-5tk" id="Gen-q3-jdV"/>
                                             <segue destination="vdb-46-PsX" kind="show" identifier="showNoteDetail" id="9k1-Y4-FSt"/>
                                         </connections>
@@ -257,12 +266,11 @@
                         <viewLayoutGuide key="safeArea" id="39y-rw-4s6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bitácora" id="mWC-n1-9MF">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="AXy-Wg-nfg">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6KX-qT-jnB">
-                                <rect key="frame" x="16" y="0.0" width="104" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="camera-icon"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="compose" id="AXy-Wg-nfg">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="EditNote:" destination="ETa-TB-4Pe" id="WgW-lF-Y7w"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="f5c-UP-K31">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -703,7 +711,6 @@
         <image name="014-building-1" width="512" height="512"/>
         <image name="DSF-477" width="512" height="512"/>
         <image name="blue-gradient" width="253" height="450"/>
-        <image name="camera-icon" width="30" height="30"/>
         <image name="interface" width="256" height="256"/>
         <image name="sheet" width="512" height="512"/>
     </resources>

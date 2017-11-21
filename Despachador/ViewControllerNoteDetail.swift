@@ -20,7 +20,6 @@ class ViewControllerNoteDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.titlenote.text = self.note.title
         self.date.text = self.note.date
         self.category.text = self.note.category

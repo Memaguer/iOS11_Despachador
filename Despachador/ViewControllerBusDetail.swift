@@ -21,7 +21,7 @@ class ViewControllerBusDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.plateImage.image = self.bus.plateImage
         self.plateLabel.text = self.bus.licensePlate
         self.driverLabel.text = "chofer \(self.bus.driver!)"

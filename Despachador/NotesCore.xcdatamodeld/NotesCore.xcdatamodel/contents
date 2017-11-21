@@ -4,9 +4,10 @@
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Log" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Log" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
