@@ -38,7 +38,7 @@ class ViewControllerBook: UIViewController {
         self.searchBar.placeholder = "Buscar en bitácora"
     }
     
-    func loadInfoFromCoraData(){
+    func loadInfoFromCoraData() {
         let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()
         do {
             let logs = try PersistenceService.context.fetch(fetchRequest)
@@ -47,19 +47,70 @@ class ViewControllerBook: UIViewController {
         } catch {}
     }
     
+    func getDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_SP")
+        formatter.dateFormat = "dd 'de' MMMM 'de' yyyy"
+        
+        return formatter.string(from: date)
+    }
+    
+    func getTime() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
+    
+    func getImageByCategory(category: String) -> UIImage {
+        var image: UIImage
+        switch category {
+        case "unidades":
+            image = #imageLiteral(resourceName: "transport")
+        case "llegada":
+            image = #imageLiteral(resourceName: "arrowGreen")
+        case "salida":
+            image = #imageLiteral(resourceName: "arrowRed")
+        case "cerrado":
+            image = #imageLiteral(resourceName: "closed")
+        case "abierto":
+            image = #imageLiteral(resourceName: "open")
+        case "pasajeros":
+            image = #imageLiteral(resourceName: "passenger")
+        case "estación":
+            image = #imageLiteral(resourceName: "signStation")
+        default:
+            image = #imageLiteral(resourceName: "forbidden")
+        }
+        return image
+    }
+    
+    func fillForm(title: String, detail: String, category: String) {
+        let log = Log(context: PersistenceService.context)
+        log.title = title
+        log.detail = detail
+        log.category = category
+        log.date = self.getDate()
+        log.time = self.getTime()
+        PersistenceService.saveContext()
+        self.notes.append(log)
+        self.tableView.reloadData()
+    }
+    
     @IBAction func EditNote(_ sender: Any) {
         let alert = UIAlertController(title: "Categoría", message: "Selecciona la categoría de bitácora", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Unidades", style: .default, handler: { (action) -> Void in
-            self.category = "Unidades"
+            self.category = "unidades"
             self.showAlertForm()
         })
         let action2 = UIAlertAction(title: "Pasajeros", style: .default, handler: { (action) -> Void in
-            self.category = "Pasajeros"
+            self.category = "pasajeros"
             self.showAlertForm()
         })
         let action3 = UIAlertAction(title: "Estación", style: .default, handler: { (action) -> Void in
-            self.category = "Estación"
+            self.category = "estación"
             self.showAlertForm()
         })
         // Cancel button
@@ -76,59 +127,19 @@ class ViewControllerBook: UIViewController {
         let alert = UIAlertController(title: "Nota", message: "Selecciona una nota", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Apertura de estación", style: .default, handler: { (action) -> Void in
-            let log = Log(context: PersistenceService.context)
-            log.title = "Apertura de estación"
-            log.detail = "Se incia labor en la estación."
-            log.category = "Estación"
-            log.date = "20/11/2017"
-            log.time = "18:05"
-            PersistenceService.saveContext()
-            self.notes.append(log)
-            self.tableView.reloadData()
+            self.fillForm(title: "Apertura de estación", detail: "Se incian labores en la estación.", category: "abierto")
         })
         let action2 = UIAlertAction(title: "Cierre de estación", style: .default, handler: { (action) -> Void in
-            let log = Log(context: PersistenceService.context)
-            log.title = "Cierre de estación"
-            log.detail = "Se finaliza labor en la estación."
-            log.category = "Estación"
-            log.date = "20/11/2017"
-            log.time = "18:05"
-            PersistenceService.saveContext()
-            self.notes.append(log)
-            self.tableView.reloadData()
+            self.fillForm(title: "Cierre de estación", detail: "Se finaliza labor en la estación.", category: "cerrado")
         })
         let action3 = UIAlertAction(title: "Arribo de unidad a la base", style: .default, handler: { (action) -> Void in
-            let log = Log(context: PersistenceService.context)
-            log.title = "Arribo de unidad a la base"
-            log.detail = "Llega del camión a la estación"
-            log.category = "Unidades"
-            log.date = "20/11/2017"
-            log.time = "18:05"
-            PersistenceService.saveContext()
-            self.notes.append(log)
-            self.tableView.reloadData()
+            self.fillForm(title: "Arribo de unidad a la base", detail: "Llega del camión a la estación.", category: "llegada")
         })
         let action4 = UIAlertAction(title: "Salida de unidad de la base", style: .default, handler: { (action) -> Void in
-            let log = Log(context: PersistenceService.context)
-            log.title = "Salida de unidad de la base"
-            log.detail = "Salida del camión"
-            log.category = "Unidades"
-            log.date = "20/11/2017"
-            log.time = "18:05"
-            PersistenceService.saveContext()
-            self.notes.append(log)
-            self.tableView.reloadData()
+            self.fillForm(title: "Salida de unidad de la base", detail: "Salida del camión.", category: "salida")
         })
         let action5 = UIAlertAction(title: "Personas esperando", style: .default, handler: { (action) -> Void in
-            let log = Log(context: PersistenceService.context)
-            log.title = "Personas esperando"
-            log.detail = "Personas esperando en la base"
-            log.category = "Pasajeros"
-            log.date = "20/11/2017"
-            log.time = "18:05"
-            PersistenceService.saveContext()
-            self.notes.append(log)
-            self.tableView.reloadData()
+            self.fillForm(title: "Personas esperando", detail: "Personas esperando en la base.", category: "pasajeros")
         })
         // Cancel button
         let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { (action) -> Void in })
@@ -143,32 +154,18 @@ class ViewControllerBook: UIViewController {
     }
     
     func showAlertForm(){
-        
         let alert = UIAlertController(title: "Agregar nota", message: "Introduzca todos los campos para registrar una nota", preferredStyle: .alert)
-        
-        // Login button
+        // Publish button
         let publishAction = UIAlertAction(title: "Publicar", style: .default, handler: { (action) -> Void in
             // Get TextFields text
             let title = alert.textFields![0]
             let detail = alert.textFields![1]
-            
-            print("Title: \(title.text!)\nDescription: \(detail.text!)")
             if title.text != nil && detail.text != nil {
-                let log = Log(context: PersistenceService.context)
-                log.title = title.text
-                log.detail = detail.text
-                log.category = self.category
-                log.date = "20/11/2017"
-                log.time = "18:05"
-                PersistenceService.saveContext()
-                self.notes.append(log)
-                self.tableView.reloadData()
+                self.fillForm(title: title.text!, detail: detail.text!, category: self.category)
             }
         })
-        
         // Cancel button
         let cancel = UIAlertAction(title: "Cancelar", style: .destructive, handler: { (action) -> Void in })
-        
         // Add 1 textField (for username)
         alert.addTextField { (textField: UITextField) in
             textField.keyboardAppearance = .dark
@@ -183,7 +180,6 @@ class ViewControllerBook: UIViewController {
             textField.autocorrectionType = .default
             textField.placeholder = "Escribe una descripción"
         }
-        
         // Add action buttons and present the Alert
         alert.addAction(cancel)
         alert.addAction(publishAction)
@@ -194,8 +190,7 @@ class ViewControllerBook: UIViewController {
 
 extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
-    // =================== SEACHBAR =========================
-    
+    // =================== SEARCHBAR =========================
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredData = self.notes.filter({ (note) -> Bool in
             if (note.title?.lowercased().contains(self.searchBar.text!.lowercased()))!{
@@ -217,8 +212,7 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
         self.tableView.reloadData()
     }
     
-    // =================== TABLE =========================
-    
+    // =================== TABLE ========================
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -246,32 +240,14 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
             cell.title.text = note.title
             cell.date.text = note.date
             cell.time.text = note.time
-            switch note.category {
-            case "Unidades"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "bus-check")
-            case "Pasajeros"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "group")
-            case "Estación"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "007-building-7")
-            default:
-                cell.imageNote.image = #imageLiteral(resourceName: "bus-wrong")
-            }
+            cell.imageNote.image = getImageByCategory(category: note.category!)
             return cell
         } else {
             note = notes[indexPath.row]
             cell.title.text = note.title
             cell.date.text = note.date
             cell.time.text = note.time
-            switch note.category {
-            case "Unidades"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "bus-check")
-            case "Pasajeros"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "group")
-            case "Estación"?:
-                cell.imageNote.image = #imageLiteral(resourceName: "007-building-7")
-            default:
-                cell.imageNote.image = #imageLiteral(resourceName: "bus-wrong")
-            }
+            cell.imageNote.image = getImageByCategory(category: note.category!)
             return cell
         }
     }
@@ -294,19 +270,17 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
         return [shareAction, deleteAction]
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selectedNote: Log
-        if segue.identifier == "showNoteDetail"{
-            if let indexPath = self.tableView.indexPathForSelectedRow{
-                selectedNote = self.notes[indexPath.row]
-                let newViewControllerD = segue.destination as! ViewControllerNoteDetail
-                newViewControllerD.note = selectedNote
-            }
-            else{
-                selectedNote = self.filteredData[0]
-                let newViewControllerD = segue.destination as! ViewControllerNoteDetail
-                newViewControllerD.note = selectedNote
-            }
-        }
+        selectedNote = self.notes[indexPath.row]
+        let alert = UIAlertController(title: "\n\n\n\n\(selectedNote.title!)", message: selectedNote.detail!, preferredStyle: .alert)
+        // OK button
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
+        let imageView = UIImageView(frame: CGRect(x: 95, y: 15, width: 80, height: 80))
+        imageView.image = getImageByCategory(category: selectedNote.category!)
+        // Add action buttons and present the Alert
+        alert.view.addSubview(imageView)
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
     }
 }

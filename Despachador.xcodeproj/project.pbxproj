@@ -53,10 +53,9 @@
 		A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */; };
 		A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B191FAACDD50038C982 /* Note.swift */; };
 		A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */; };
-		A7EABF4E1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */; };
+		A7CB57AA1FC52E8C0042D1A1 /* ViewControllerBusDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */; };
 		A7EB01071FB8DCE7002B0FDD /* StationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */; };
 		A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */; };
-		A7FED13F1FA6ED5400D853F0 /* ViewControllerBusDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */; };
 		A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FED1421FA76CED00D853F0 /* BusStruct.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,10 +183,9 @@
 		A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBook.swift; sourceTree = "<group>"; };
 		A79E5B191FAACDD50038C982 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNote.swift; sourceTree = "<group>"; };
-		A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNoteDetail.swift; sourceTree = "<group>"; };
+		A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBusDetail.swift; sourceTree = "<group>"; };
 		A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStruct.swift; sourceTree = "<group>"; };
 		A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationAnnotation.swift; sourceTree = "<group>"; };
-		A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBusDetail.swift; sourceTree = "<group>"; };
 		A7FED1421FA76CED00D853F0 /* BusStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStruct.swift; sourceTree = "<group>"; };
 		CE16AA09CF6FB24040B811FD /* Pods-Despachador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Despachador.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Despachador/Pods-Despachador.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,10 +280,9 @@
 				A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */,
 				A721DC851FA50601001F53C4 /* ViewController.swift */,
 				A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */,
-				A7FED13E1FA6ED5400D853F0 /* ViewControllerBusDetail.swift */,
+				A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */,
 				A78D3E771FC229E4006EE771 /* ViewControllerLoadingStation.swift */,
 				A755E6A51FA99472008571C5 /* ViewControllerMap.swift */,
-				A7EABF4D1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift */,
 				A721DCB11FA542B6001F53C4 /* ViewControllerTables.swift */,
 				A721DC8A1FA50601001F53C4 /* Assets.xcassets */,
 				A755E68E1FA992CB008571C5 /* GeoFire */,
@@ -641,16 +638,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CB57AA1FC52E8C0042D1A1 /* ViewControllerBusDetail.swift in Sources */,
 				A755E6A01FA992CB008571C5 /* GFBase32Utils.m in Sources */,
 				A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */,
-				A7EABF4E1FAB2BE70001F6AD /* ViewControllerNoteDetail.swift in Sources */,
 				A721DC861FA50601001F53C4 /* ViewController.swift in Sources */,
 				A721DCB21FA542B6001F53C4 /* ViewControllerTables.swift in Sources */,
 				A799032C1FC2740D0097978C /* PersistenceService.swift in Sources */,
 				A755E6A21FA992CB008571C5 /* GFGeoHashQuery.m in Sources */,
 				A78D3E781FC229E4006EE771 /* ViewControllerLoadingStation.swift in Sources */,
 				A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */,
-				A7FED13F1FA6ED5400D853F0 /* ViewControllerBusDetail.swift in Sources */,
 				A72225A51FA635CD0032DF31 /* TableViewCellBus.swift in Sources */,
 				A78D3E7A1FC22C3B006EE771 /* Station.swift in Sources */,
 				A79903361FC357CA0097978C /* Log+CoreDataProperties.swift in Sources */,
