@@ -151,11 +151,6 @@ extension ViewControllerTables : UITableViewDataSource{
         cell.distanceLabel.text = "A \(bus.distance!) metros"
         cell.timeLabel.text = "a \(bus.time!) minutos aprox."
         cell.capacityLabel.text = "capacidad del \(bus.capacity!)%"
-        if(indexPath.row != 0){
-            let TempImageView = UIImageView(image: #imageLiteral(resourceName: "card_6"))
-            TempImageView.frame = cell.frame
-            //cell.backgroundView = TempImageView
-        }
         return cell
     }
     

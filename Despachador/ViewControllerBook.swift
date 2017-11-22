@@ -12,16 +12,16 @@ import CoreData
 class ViewControllerBook: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var searchBar: UISearchBar!
     var notes: [Log] = []
     var filteredData: [Log] = []
     var isSearching = false
     var category: String!
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableSettings()
         searchBarSettings()
+        tableSettings()
         loadInfoFromCoraData()
     }
 
@@ -29,13 +29,18 @@ class ViewControllerBook: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func tableSettings() {
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    func searchBarSettings(){
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Buscar en bitácora"
+        self.searchController.searchBar.barTintColor = UIColor(red: 49.0/255.0, green: 181.0/255.0, blue: 217.0/255.0, alpha: 1)
+        self.searchController.searchBar.tintColor = UIColor.white
     }
     
-    func searchBarSettings(){
-        self.searchBar.delegate = self
-        self.searchBar.placeholder = "Buscar en bitácora"
+    func tableSettings() {
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     func loadInfoFromCoraData() {
@@ -186,30 +191,29 @@ class ViewControllerBook: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-}
-
-extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
-    
-    // =================== SEARCHBAR =========================
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func filterContentFor(textToSearch: String) {
         self.filteredData = self.notes.filter({ (note) -> Bool in
-            if (note.title?.lowercased().contains(self.searchBar.text!.lowercased()))!{
+            if (note.title?.lowercased().contains(textToSearch.lowercased()))! || (note.category?.lowercased().contains(textToSearch.lowercased()))! || (note.date?.lowercased().contains(textToSearch.lowercased()))! ||
+                (note.time?.lowercased().contains(textToSearch.lowercased()))!{
                 return true
-            }else{
+            } else if textToSearch.count < 1{
+                return true
+            } else {
                 return false
             }
         })
-        if(filteredData.count == 0){
-            isSearching = false;
-        } else {
-            isSearching = true;
-        }
-        self.tableView.reloadData()
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false;
-        self.tableView.reloadData()
+}
+
+extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+    
+    // =================== SEARCHBAR =========================
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            self.filterContentFor(textToSearch: searchText)
+            self.tableView.reloadData()
+        }
     }
     
     // =================== TABLE ========================
@@ -218,7 +222,7 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
+        if self.searchController.isActive {
             return self.filteredData.count
         }
         else{
@@ -231,48 +235,62 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let note: Log!
+        if self.searchController.isActive {
+            note = self.filteredData[indexPath.row]
+        } else {
+            note = self.notes[indexPath.row]
+        }
         let cellId = "NoteCell"
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableViewCellNote
-        let note: Log
         
-        if isSearching {
-            note = filteredData[indexPath.row]
-            cell.title.text = note.title
-            cell.date.text = note.date
-            cell.time.text = note.time
-            cell.imageNote.image = getImageByCategory(category: note.category!)
-            return cell
-        } else {
-            note = notes[indexPath.row]
-            cell.title.text = note.title
-            cell.date.text = note.date
-            cell.time.text = note.time
-            cell.imageNote.image = getImageByCategory(category: note.category!)
-            return cell
-        }
+        cell.title.text = note.title
+        cell.date.text = note.date
+        cell.time.text = note.time
+        cell.imageNote.image = getImageByCategory(category: note.category!)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let note: Log!
+        if self.searchController.isActive {
+            note = self.filteredData[indexPath.row]
+        } else {
+            note = self.notes[indexPath.row]
+        }
         // Share
         let shareAction = UITableViewRowAction(style: .normal, title: "compartir") { (action, indexPath) in
-            let shareMessage = "\(self.notes[indexPath.row])"
-            let shareController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
+            let shareDefaultText = "\(note.title!): \(note.detail!)"
+            let shareController = UIActivityViewController(activityItems: [shareDefaultText], applicationActivities: nil)
             self.present(shareController, animated: true, completion: nil)
         }
         shareAction.backgroundColor = UIColor.orange
         // Delete
         let deleteAction = UITableViewRowAction(style: .default, title: "eliminar") { (action, indexPath) in
-            PersistenceService.context.delete(self.notes[indexPath.row])
+            PersistenceService.context.delete(note)
             PersistenceService.saveContext()
-            self.notes.remove(at: indexPath.row)
+            if self.searchController.isActive {
+                self.filteredData.remove(at: indexPath.row)
+                let fetchRequest: NSFetchRequest<Log> = Log.fetchRequest()
+                do {
+                    let logs = try PersistenceService.context.fetch(fetchRequest)
+                    self.notes = logs
+                } catch {}
+            } else {
+                self.notes.remove(at: indexPath.row)
+            }
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         return [shareAction, deleteAction]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedNote: Log
-        selectedNote = self.notes[indexPath.row]
+        let selectedNote: Log!
+        if self.searchController.isActive {
+            selectedNote = self.filteredData[indexPath.row]
+        } else {
+            selectedNote = self.notes[indexPath.row]
+        }
         let alert = UIAlertController(title: "\n\n\n\n\(selectedNote.title!)", message: selectedNote.detail!, preferredStyle: .alert)
         // OK button
         let okButton = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })

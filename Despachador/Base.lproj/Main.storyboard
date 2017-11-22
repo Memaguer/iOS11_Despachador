@@ -171,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMm-6q-a5B">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="23K-d9-B88" customClass="TableViewCellNote" customModule="Despachador" customModuleProvider="target">
@@ -184,6 +184,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vc0-92-Wcu">
                                                     <rect key="frame" x="40" y="5" width="73" height="70"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="EZF-4f-drB"/>
                                                         <constraint firstAttribute="width" constant="73" id="Y3h-RW-ImH"/>
                                                     </constraints>
                                                 </imageView>
@@ -227,6 +228,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="hHl-Z6-uV9" secondAttribute="bottom" constant="5" id="bP9-2Y-LpY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="17" minY="0.0" maxX="17" maxY="0.0"/>
                                         <connections>
                                             <outlet property="date" destination="s2E-ZF-nDB" id="4ON-nR-1sa"/>
                                             <outlet property="imageNote" destination="Vc0-92-Wcu" id="Gle-Ce-X0B"/>
@@ -240,23 +242,12 @@
                                     <outlet property="delegate" destination="ETa-TB-4Pe" id="pVj-kL-Yxz"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="KuT-R7-iKi">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <color key="barTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ETa-TB-4Pe" id="Zr4-j1-0DF"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KuT-R7-iKi" firstAttribute="leading" secondItem="39y-rw-4s6" secondAttribute="leading" id="4i7-TL-EsJ"/>
-                            <constraint firstItem="KuT-R7-iKi" firstAttribute="top" secondItem="39y-rw-4s6" secondAttribute="top" id="65f-zK-aPR"/>
                             <constraint firstItem="sMm-6q-a5B" firstAttribute="trailing" secondItem="39y-rw-4s6" secondAttribute="trailing" id="OJo-dJ-6lg"/>
-                            <constraint firstItem="sMm-6q-a5B" firstAttribute="top" secondItem="KuT-R7-iKi" secondAttribute="bottom" id="ad9-7K-Xjb"/>
-                            <constraint firstItem="KuT-R7-iKi" firstAttribute="trailing" secondItem="39y-rw-4s6" secondAttribute="trailing" id="b52-fL-j3H"/>
                             <constraint firstItem="sMm-6q-a5B" firstAttribute="leading" secondItem="39y-rw-4s6" secondAttribute="leading" id="cyF-WB-pTD"/>
+                            <constraint firstItem="sMm-6q-a5B" firstAttribute="top" secondItem="39y-rw-4s6" secondAttribute="top" id="ljt-tT-ANU"/>
                             <constraint firstItem="sMm-6q-a5B" firstAttribute="bottom" secondItem="39y-rw-4s6" secondAttribute="bottom" id="xD5-tg-DJP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="39y-rw-4s6"/>
@@ -276,7 +267,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="KuT-R7-iKi" id="bQC-gf-jPF"/>
                         <outlet property="searchDisplayController" destination="5GC-IU-UG8" id="cdn-eS-585"/>
                         <outlet property="tableView" destination="sMm-6q-a5B" id="7nw-HZ-yRu"/>
                     </connections>
@@ -285,7 +275,6 @@
                 <searchDisplayController id="5GC-IU-UG8">
                     <connections>
                         <outlet property="delegate" destination="ETa-TB-4Pe" id="Pjh-3J-cMN"/>
-                        <outlet property="searchBar" destination="KuT-R7-iKi" id="lIa-HG-JhK"/>
                         <outlet property="searchContentsController" destination="ETa-TB-4Pe" id="ozN-s7-fZy"/>
                         <outlet property="searchResultsDataSource" destination="ETa-TB-4Pe" id="kbu-Aq-CYr"/>
                         <outlet property="searchResultsDelegate" destination="ETa-TB-4Pe" id="kER-o5-d9w"/>
