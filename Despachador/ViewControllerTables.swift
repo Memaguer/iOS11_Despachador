@@ -12,6 +12,11 @@ import FirebaseDatabase
 class ViewControllerTables: UIViewController{
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var plateLabel: UILabel!
+    
+    
+    
     var segmentSelected: Int!
     var buses : [Bus] = []
     var nextBuses: [Bus] = []
@@ -32,7 +37,14 @@ class ViewControllerTables: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //getBusesFromFirebase()
+        super.viewDidLoad()
+        /*let logo = #imageLiteral(resourceName: "app-background")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView*/
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
         getBusesFromApi()
         
@@ -124,14 +136,26 @@ class ViewControllerTables: UIViewController{
         
         tableView.reloadData()
     }
+    
+    
+    @IBAction func swipeRightTable(_ sender: Any) {
+        if self.segmentSelected > 0 {
+            self.segmentedControl.selectedSegmentIndex = self.segmentSelected - 1
+            self.switchTableAction(self.segmentedControl)
+        }
+    }
+    
+    @IBAction func swipeLeftTable(_ sender: Any) {
+        if self.segmentSelected < 2 {
+            self.segmentedControl.selectedSegmentIndex = self.segmentSelected + 1
+            self.switchTableAction(self.segmentedControl)
+        }
+    }
+    
+    
 }
 
-
-
-
-
-
-extension ViewControllerTables : UITableViewDataSource{
+extension ViewControllerTables : UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -153,6 +177,10 @@ extension ViewControllerTables : UITableViewDataSource{
         cell.capacityLabel.text = "capacidad del \(bus.capacity!)%"
         return cell
     }
+    
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.plateLabel.text = buses[indexPath.row].licensePlate
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBusDetail"{

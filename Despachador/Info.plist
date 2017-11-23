@@ -41,5 +41,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesitamos acceder al mapa para poder ubicar los camiones cercanos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Esta aplicación usa la cámara para la Realidad Aumentada</string>
 </dict>
 </plist>

@@ -35,7 +35,7 @@ class ViewControllerBook: UIViewController {
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Buscar en bitácora"
-        self.searchController.searchBar.barTintColor = UIColor(red: 49.0/255.0, green: 181.0/255.0, blue: 217.0/255.0, alpha: 1)
+        self.searchController.searchBar.barTintColor = UIColor(red: 18.0/255.0, green: 167.0/255.0, blue: 206.0/255.0, alpha: 1)
         self.searchController.searchBar.tintColor = UIColor.white
     }
     

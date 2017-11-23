@@ -18,6 +18,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.unselectedItemTintColor = UIColor.white
+        self.tabBar.tintColor = UIColor.black
         /*print("TabBar - nextBuses count: \(nextBuses.count)")
         
         print(flagTwo)

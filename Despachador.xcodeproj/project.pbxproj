@@ -54,6 +54,9 @@
 		A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B191FAACDD50038C982 /* Note.swift */; };
 		A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */; };
 		A7CB57AA1FC52E8C0042D1A1 /* ViewControllerBusDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */; };
+		A7CB57F21FC63ED80042D1A1 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB57F11FC63ED80042D1A1 /* SwiftJSON.swift */; };
+		A7CB57F41FC63F040042D1A1 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB57F31FC63F040042D1A1 /* Scene.swift */; };
+		A7CB57F61FC63F1D0042D1A1 /* ViewControllerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB57F51FC63F1D0042D1A1 /* ViewControllerAR.swift */; };
 		A7EB01071FB8DCE7002B0FDD /* StationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */; };
 		A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */; };
 		A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FED1421FA76CED00D853F0 /* BusStruct.swift */; };
@@ -184,6 +187,9 @@
 		A79E5B191FAACDD50038C982 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNote.swift; sourceTree = "<group>"; };
 		A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBusDetail.swift; sourceTree = "<group>"; };
+		A7CB57F11FC63ED80042D1A1 /* SwiftJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
+		A7CB57F31FC63F040042D1A1 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		A7CB57F51FC63F1D0042D1A1 /* ViewControllerAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAR.swift; sourceTree = "<group>"; };
 		A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStruct.swift; sourceTree = "<group>"; };
 		A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationAnnotation.swift; sourceTree = "<group>"; };
 		A7FED1421FA76CED00D853F0 /* BusStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStruct.swift; sourceTree = "<group>"; };
@@ -262,23 +268,27 @@
 		A721DC821FA50601001F53C4 /* Despachador */ = {
 			isa = PBXGroup;
 			children = (
-				A79903331FC357BA0097978C /* Log+CoreDataClass.swift */,
-				A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */,
 				A7339A9E1FA9768A00768B1D /* GoogleService-Info.plist */,
 				A721DC8F1FA50601001F53C4 /* Info.plist */,
 				A721DC831FA50601001F53C4 /* AppDelegate.swift */,
 				A721DCB31FA546F9001F53C4 /* Bus.swift */,
 				A722C38A1FB2A05600185E80 /* BusAnnotation.swift */,
 				A7FED1421FA76CED00D853F0 /* BusStruct.swift */,
+				A79903331FC357BA0097978C /* Log+CoreDataClass.swift */,
+				A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */,
 				A79E5B191FAACDD50038C982 /* Note.swift */,
+				A799032B1FC2740D0097978C /* PersistenceService.swift */,
+				A7CB57F31FC63F040042D1A1 /* Scene.swift */,
 				A78D3E791FC22C3B006EE771 /* Station.swift */,
 				A7EB01081FB912C4002B0FDD /* StationAnnotation.swift */,
 				A7EB01061FB8DCE7002B0FDD /* StationStruct.swift */,
+				A7CB57F11FC63ED80042D1A1 /* SwiftJSON.swift */,
 				A79E5B111FAAAFD70038C982 /* TabBarController.swift */,
 				A72225A41FA635CD0032DF31 /* TableViewCellBus.swift */,
 				A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */,
 				A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */,
 				A721DC851FA50601001F53C4 /* ViewController.swift */,
+				A7CB57F51FC63F1D0042D1A1 /* ViewControllerAR.swift */,
 				A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */,
 				A7CB57A91FC52E8B0042D1A1 /* ViewControllerBusDetail.swift */,
 				A78D3E771FC229E4006EE771 /* ViewControllerLoadingStation.swift */,
@@ -289,7 +299,6 @@
 				A721DC8C1FA50601001F53C4 /* LaunchScreen.storyboard */,
 				A721DC871FA50601001F53C4 /* Main.storyboard */,
 				A79903281FC272660097978C /* NotesCore.xcdatamodeld */,
-				A799032B1FC2740D0097978C /* PersistenceService.swift */,
 			);
 			path = Despachador;
 			sourceTree = "<group>";
@@ -639,7 +648,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CB57AA1FC52E8C0042D1A1 /* ViewControllerBusDetail.swift in Sources */,
+				A7CB57F21FC63ED80042D1A1 /* SwiftJSON.swift in Sources */,
 				A755E6A01FA992CB008571C5 /* GFBase32Utils.m in Sources */,
+				A7CB57F61FC63F1D0042D1A1 /* ViewControllerAR.swift in Sources */,
 				A7EB01091FB912C4002B0FDD /* StationAnnotation.swift in Sources */,
 				A721DC861FA50601001F53C4 /* ViewController.swift in Sources */,
 				A721DCB21FA542B6001F53C4 /* ViewControllerTables.swift in Sources */,
@@ -657,6 +668,7 @@
 				A722C38B1FB2A05600185E80 /* BusAnnotation.swift in Sources */,
 				A7FED1431FA76CED00D853F0 /* BusStruct.swift in Sources */,
 				A755E6A11FA992CB008571C5 /* GeoFire.m in Sources */,
+				A7CB57F41FC63F040042D1A1 /* Scene.swift in Sources */,
 				A79903341FC357BB0097978C /* Log+CoreDataClass.swift in Sources */,
 				A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */,
 				A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */,

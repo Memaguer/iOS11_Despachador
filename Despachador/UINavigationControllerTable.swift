@@ -16,7 +16,6 @@ class UINavigationControllerTable: UINavigationController {
     var onRouteBuses : [Bus]!*/
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         /*print("UINavigation - nextBuses count: \(nextBuses.count)")
         performSegue(withIdentifier: "NavigationViewSegue", sender: self)*/
     }
