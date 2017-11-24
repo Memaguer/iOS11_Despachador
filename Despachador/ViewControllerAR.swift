@@ -162,11 +162,9 @@ class ViewControllerAR: UIViewController, ARSKViewDelegate, CLLocationManagerDel
             let angle = azimut - userHeading
             let angleRad = degreesToRadians(angle)
             // Create matrix for horizontal rotation (anchor)
-            let horizontalRotation = float4x4.init(SCNMatrix4MakeRotation(Float(angleRad), 1, 0, 0))
-                SCNMatrix4MakeRotation(Float(angleRad), 1, 0, 0)
-            //(SCNMatrix4MakeRotation(Float(angleRad), 1, 0, 0))
+            let horizontalRotation = simd_float4x4(SCNMatrix4MakeRotation(Float(angleRad), 1, 0, 0))
             // Create matrix for vertical rotation (distance)
-            let verticalRotation = float4x4.init(SCNMatrix4MakeRotation(-0.3 + Float(distance/500), 0, 1, 0))
+            let verticalRotation = simd_float4x4(SCNMatrix4MakeRotation(-0.3 + Float(distance/500), 0, 1, 0))
             // Multiply matrices and ARKit
             let rotation = simd_mul(horizontalRotation, verticalRotation)
             // Create a new matrix
