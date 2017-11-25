@@ -288,25 +288,12 @@
         <scene sceneID="mad-lG-Mz1">
             <objects>
                 <viewController title="Visor" id="jq4-eb-Klo" customClass="ViewControllerAR" customModule="Despachador" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vFF-R0-dka">
+                    <arskView key="view" contentMode="scaleToFill" id="WRS-JU-BUX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <arskView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-Nt-b1h">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                            </arskView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JbS-Nt-b1h" firstAttribute="trailing" secondItem="JfI-Lv-6td" secondAttribute="trailing" id="TJL-fk-oxB"/>
-                            <constraint firstItem="JbS-Nt-b1h" firstAttribute="top" secondItem="vFF-R0-dka" secondAttribute="top" id="c40-Hw-Jg1"/>
-                            <constraint firstItem="JbS-Nt-b1h" firstAttribute="bottom" secondItem="JfI-Lv-6td" secondAttribute="bottom" id="mVf-eV-4X7"/>
-                            <constraint firstItem="JbS-Nt-b1h" firstAttribute="leading" secondItem="JfI-Lv-6td" secondAttribute="leading" id="x4A-a1-d1I"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="JfI-Lv-6td"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arskView>
                     <connections>
-                        <outlet property="sceneView" destination="JbS-Nt-b1h" id="uQ7-r0-Bdc"/>
+                        <outlet property="sceneView" destination="WRS-JU-BUX" id="rxq-mU-z32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ke-eN-3Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -670,7 +657,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DSF-477" width="512" height="512"/>
+        <image name="DSF-477" width="256" height="256"/>
         <image name="app-background" width="2400" height="2000"/>
         <image name="blue-gradient" width="253" height="450"/>
         <image name="busIcon" width="42" height="42"/>
