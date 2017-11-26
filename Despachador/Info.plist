@@ -43,5 +43,7 @@
 	<string>Necesitamos acceder al mapa para poder ubicar los camiones cercanos</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Esta aplicación usa la cámara para la Realidad Aumentada</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>

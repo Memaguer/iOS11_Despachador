@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet var startButton: UIButton!
     @IBOutlet var stationPickerView: UIPickerView!
     let stations = ["Selecciona tu estación", "Izazaga", "Xola", "General Anaya", "Huipulco", "Nicolas Bravo", "Xochimilco", "La Noria", "Periférico", "Estadio Azteca", "Viaducto"];
     var stationId: Int = 0;
@@ -17,12 +18,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startButton.layer.cornerRadius = 15
+        startButton.clipsToBounds = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -12,12 +12,15 @@ import FirebaseDatabase
 class ViewControllerTables: UIViewController{
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var plateLabel: UILabel!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var actualButton: UIButton!
+    @IBOutlet var onRouteButton: UIButton!
     
     
     
     var segmentSelected: Int!
+    var segmentSelectedPrevious: Int!
+    var cellCount = 0
     var buses : [Bus] = []
     var nextBuses: [Bus] = []
     var actualBuses: [Bus] = []
@@ -38,21 +41,30 @@ class ViewControllerTables: UIViewController{
         super.viewDidLoad()
         
         super.viewDidLoad()
-        /*let logo = #imageLiteral(resourceName: "app-background")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView*/
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
+        self.segmentSelected = 0
+        
+        let backgroundTable = UIImageView(image: #imageLiteral(resourceName: "bluePolygon"))
+        backgroundTable.contentMode = .scaleAspectFill
+        self.tableView.backgroundView = backgroundTable
+        
+        
+        
+        
+        
+        createButtons()
+        resetButtons()
+        
+        
+        
+        
         getBusesFromApi()
         
         buses = nextBuses
-        
-        for bus in buses {
-            print("==> \(bus.licensePlate)")
-        }
         
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         
@@ -94,61 +106,110 @@ class ViewControllerTables: UIViewController{
         task.resume()
     }
     
-    func getBusesFromFirebase(){
-        ref = Database.database().reference()
-        databaseHandle = ref?.child("buses").observe(.childAdded, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject]{
-                print(dictionary)
-                print(dictionary.count)
-                let licensePlate = dictionary["licensePlate"] as? String
-                let driver = dictionary["driver"] as? String
-                let distance = dictionary["distance"] as? Int
-                let capacity = dictionary["capacity"] as? Int
-                let time = dictionary["time"] as? Int
-                let station = dictionary["station"] as? Int
-                let bus = Bus(licensePlate: licensePlate!, driver: driver!, distance: distance!, capacity: capacity!, time: time!)
-                if station! < 4 {
-                    self.nextBuses.append(bus)
-                } else if station! > 4 {
-                    self.onRouteBuses.append(bus)
-                }
-                else{
-                    self.actualBuses.append(bus)
-                }
-            }
-        })
+    func createButtons() {
+        //  ==== First button ====
+        let firstLabel = UILabel()
+        firstLabel.text = "\(nextBuses.count)"
+        firstLabel.textColor = UIColor.white
+        firstLabel.font = UIFont(name: "Arial", size: 40)
+        firstLabel.textAlignment = NSTextAlignment.center
+        firstLabel.frame = CGRect.init(x: 0, y: nextButton.frame.height * 0.5, width: nextButton.frame.width, height: nextButton.frame.height * 0.2)
+        nextButton.addSubview(firstLabel)
+        //  ==== Second button ====
+        let secondLabel = UILabel()
+        secondLabel.textColor = UIColor.white
+        secondLabel.font = UIFont(name: "Arial", size: 40)
+        secondLabel.text = "\(actualBuses.count)"
+        secondLabel.textAlignment = NSTextAlignment.center
+        secondLabel.frame = CGRect.init(x: 0, y: actualButton.frame.height * 0.5, width: actualButton.frame.width, height: actualButton.frame.height * 0.2)
+        actualButton.addSubview(secondLabel)
+        //  ==== Third button ====
+        let thirdLabel = UILabel()
+        thirdLabel.textColor = UIColor.white
+        thirdLabel.font = UIFont(name: "Arial", size: 40)
+        thirdLabel.text = "\(actualBuses.count)"
+        thirdLabel.textAlignment = NSTextAlignment.center
+        thirdLabel.frame = CGRect.init(x: 0, y: onRouteButton.frame.height * 0.5, width: onRouteButton.frame.width, height: onRouteButton.frame.height * 0.2)
+        onRouteButton.addSubview(thirdLabel)
     }
     
-    @IBAction func switchTableAction(_ sender: UISegmentedControl) {
-        segmentSelected = sender.selectedSegmentIndex
-        
+    func resetButtons() {
+        //  ==== First button ====
+        self.nextButton.backgroundColor = UIColor.clear
+        let borderNextButton = UILabel()
+        borderNextButton.backgroundColor = UIColor.init(red: 34/255, green: 209/255, blue: 169/255, alpha: 1)
+        borderNextButton.text = ""
+        borderNextButton.frame = CGRect.init(x: 0, y: self.nextButton.frame.height * 0.85, width: self.nextButton.frame.width, height: self.nextButton.frame.height * 0.15)
+        self.nextButton.addSubview(borderNextButton)
+        //  ==== Second button ====
+        self.actualButton.backgroundColor = UIColor.clear
+        let borderActualButton = UILabel()
+        borderActualButton.backgroundColor = UIColor.init(red: 253/255, green: 185/255, blue: 44/255, alpha: 1)
+        borderActualButton.text = ""
+        borderActualButton.frame = CGRect.init(x: 0, y: self.actualButton.frame.height * 0.85, width: self.actualButton.frame.width, height: self.actualButton.frame.height * 0.15)
+        self.actualButton.addSubview(borderActualButton)
+        //  ==== Third button ====
+        self.onRouteButton.backgroundColor = UIColor.clear
+        let borderOnRouteButton = UILabel()
+        borderOnRouteButton.backgroundColor = UIColor.init(red: 242/255, green: 95/255, blue: 116/255, alpha: 1)
+        borderOnRouteButton.text = ""
+        borderOnRouteButton.frame = CGRect.init(x: 0, y: self.onRouteButton.frame.height * 0.85, width: self.onRouteButton.frame.width, height: self.nextButton.frame.height * 0.15)
+        self.onRouteButton.addSubview(borderOnRouteButton)
+    }
+    
+    func buttonSelected() {
         switch segmentSelected {
         case 0:
-            buses = nextBuses
+            self.nextButton.backgroundColor = UIColor.init(red: 34/255, green: 209/255, blue: 169/255, alpha: 1)
         case 1:
-            buses = actualBuses
+            self.actualButton.backgroundColor = UIColor.init(red: 253/255, green: 185/255, blue: 44/255, alpha: 1)
         case 2:
-            buses = onRouteBuses
-        default:
-            print("Nada")
+            self.onRouteButton.backgroundColor = UIColor.init(red: 242/255, green: 95/255, blue: 116/255, alpha: 1)
+        default: break
         }
-        
+    }
+    
+    @IBAction func showNextBuses(_ sender: Any) {
+        self.segmentSelectedPrevious = self.segmentSelected
+        self.segmentSelected = 0
+        buses = nextBuses
+        resetButtons()
+        buttonSelected()
+        tableView.reloadData()
+    }
+    
+    @IBAction func showActualBuses(_ sender: Any) {
+        self.segmentSelectedPrevious = self.segmentSelected
+        self.segmentSelected = 1
+        buses = actualBuses
+        resetButtons()
+        buttonSelected()
         tableView.reloadData()
     }
     
     
+    @IBAction func showOnRouteBuses(_ sender: Any) {
+        self.segmentSelectedPrevious = self.segmentSelected
+        self.segmentSelected = 2
+        buses = onRouteBuses
+        resetButtons()
+        buttonSelected()
+        tableView.reloadData()
+    }
+    
     @IBAction func swipeRightTable(_ sender: Any) {
-        if self.segmentSelected > 0 {
-            self.segmentedControl.selectedSegmentIndex = self.segmentSelected - 1
-            self.switchTableAction(self.segmentedControl)
+        if self.segmentSelected == 1 {
+            self.showNextBuses(self.nextButton)
+        } else if self.segmentSelected == 2 {
+            self.showActualBuses(self.actualBuses)
         }
     }
     
     @IBAction func swipeLeftTable(_ sender: Any) {
-        if self.segmentSelected < 2 {
-            self.segmentedControl.selectedSegmentIndex = self.segmentSelected + 1
-            self.switchTableAction(self.segmentedControl)
+        if segmentSelected == 0 {
+            self.showActualBuses(self.actualBuses)
+        } else if self.segmentSelected == 1 {
+            self.showOnRouteBuses(self.onRouteButton)
         }
     }
     
@@ -169,18 +230,43 @@ extension ViewControllerTables : UITableViewDataSource, UITableViewDelegate{
         
         let cellId = "BusCell"
         let bus = buses[indexPath.row]
-        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableViewCellBus
         cell.plateImage.image = bus.plateImage
-        cell.distanceLabel.text = "A \(bus.distance!) metros"
-        cell.timeLabel.text = "a \(bus.time!) minutos aprox."
-        cell.capacityLabel.text = "capacidad del \(bus.capacity!)%"
+        cell.distanceLabel.text = "\(bus.distance!) m."
+        cell.timeLabel.text = "\(bus.time!) min."
+        cell.capacityLabel.text = "\(bus.capacity!)% de capacidad"
+        
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        let bgColorView = UIView()
+        switch segmentSelected {
+        case 0:
+            bgColorView.backgroundColor = UIColor.init(red: 34/255, green: 209/255, blue: 169/255, alpha: 1)
+        case 1:
+            bgColorView.backgroundColor = UIColor.init(red: 253/255, green: 185/255, blue: 44/255, alpha: 1)
+        case 2:
+            bgColorView.backgroundColor = UIColor.init(red: 242/255, green: 95/255, blue: 116/255, alpha: 1)
+        default: break
+        }
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.plateLabel.text = buses[indexPath.row].licensePlate
-    }*/
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let margin: CGFloat
+        if self.segmentSelected == 0 || self.segmentSelectedPrevious == 2 {
+            margin = -550
+        }
+        else {
+            margin = 550
+        }
+        let transform = CATransform3DTranslate(CATransform3DIdentity, margin, 0, 0)
+        cell.layer.transform = transform
+        UIView.animate(withDuration: 0.3) {
+            cell.layer.transform = CATransform3DIdentity
+        }
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBusDetail"{

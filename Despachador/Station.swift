@@ -18,6 +18,9 @@ class Station: NSObject {
         self.id = id
         self.name = name
         self.image = UIImage(named: "logo-\(name).png")
+        if id==8 {
+            self.image = UIImage(named: "logo-\(id).png")
+        }
     }
 
 }

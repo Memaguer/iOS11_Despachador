@@ -30,16 +30,24 @@ class ViewControllerBook: UIViewController {
     }
     
     func searchBarSettings(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         self.searchController = UISearchController(searchResultsController: nil)
         self.tableView.tableHeaderView = self.searchController.searchBar
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Buscar en bitácora"
-        self.searchController.searchBar.barTintColor = UIColor(red: 18.0/255.0, green: 167.0/255.0, blue: 206.0/255.0, alpha: 1)
+        self.searchController.searchBar.barTintColor = UIColor(red: 0/255, green: 122/255, blue: 166/255, alpha: 1)
         self.searchController.searchBar.tintColor = UIColor.white
     }
     
     func tableSettings() {
+        let backgroundTable = UIImageView(image: #imageLiteral(resourceName: "bluePolygon"))
+        backgroundTable.contentMode = .scaleAspectFill
+        self.tableView.backgroundView = backgroundTable
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -248,6 +256,12 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
         cell.date.text = note.date
         cell.time.text = note.time
         cell.imageNote.image = getImageByCategory(category: note.category!)
+        
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
+        
         return cell
     }
     
