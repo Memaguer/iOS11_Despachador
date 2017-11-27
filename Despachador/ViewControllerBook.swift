@@ -274,8 +274,10 @@ extension ViewControllerBook : UITableViewDataSource, UITableViewDelegate, UISea
         }
         // Share
         let shareAction = UITableViewRowAction(style: .normal, title: "compartir") { (action, indexPath) in
+            print("\(note.title!): \(note.detail!)")
             let shareDefaultText = "\(note.title!): \(note.detail!)"
             let shareController = UIActivityViewController(activityItems: [shareDefaultText], applicationActivities: nil)
+            shareController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
             self.present(shareController, animated: true, completion: nil)
         }
         shareAction.backgroundColor = UIColor.orange

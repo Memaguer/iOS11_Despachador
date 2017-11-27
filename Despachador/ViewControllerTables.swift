@@ -99,13 +99,16 @@ class ViewControllerTables: UIViewController{
     }
     
     func createButtons() {
+        print("height: \(nextButton.frame.height)")
+        print("width: \(nextButton.frame.width)")
+        print("widthView: \(self.view.frame.width)")
         //  ==== First button ====
         let firstLabel = UILabel()
         firstLabel.text = "\(nextBuses.count)"
         firstLabel.textColor = UIColor.white
         firstLabel.font = UIFont(name: "Arial", size: 40)
         firstLabel.textAlignment = NSTextAlignment.center
-        firstLabel.frame = CGRect.init(x: 0, y: nextButton.frame.height * 0.5, width: nextButton.frame.width, height: nextButton.frame.height * 0.2)
+        firstLabel.frame = CGRect.init(x: 0, y: self.nextButton.frame.height * 0.5, width: (self.view.frame.width-40)/3, height: self.nextButton.frame.height * 0.2)
         nextButton.addSubview(firstLabel)
         //  ==== Second button ====
         let secondLabel = UILabel()
@@ -113,7 +116,7 @@ class ViewControllerTables: UIViewController{
         secondLabel.font = UIFont(name: "Arial", size: 40)
         secondLabel.text = "\(actualBuses.count)"
         secondLabel.textAlignment = NSTextAlignment.center
-        secondLabel.frame = CGRect.init(x: 0, y: actualButton.frame.height * 0.5, width: actualButton.frame.width, height: actualButton.frame.height * 0.2)
+        secondLabel.frame = CGRect.init(x: 0, y: self.actualButton.frame.height * 0.5, width: (self.view.frame.width-40)/3, height: self.actualButton.frame.height * 0.2)
         actualButton.addSubview(secondLabel)
         //  ==== Third button ====
         let thirdLabel = UILabel()
@@ -121,7 +124,7 @@ class ViewControllerTables: UIViewController{
         thirdLabel.font = UIFont(name: "Arial", size: 40)
         thirdLabel.text = "\(actualBuses.count)"
         thirdLabel.textAlignment = NSTextAlignment.center
-        thirdLabel.frame = CGRect.init(x: 0, y: onRouteButton.frame.height * 0.5, width: onRouteButton.frame.width, height: onRouteButton.frame.height * 0.2)
+        thirdLabel.frame = CGRect.init(x: 0, y: onRouteButton.frame.height * 0.5, width: (self.view.frame.width-40)/3, height: onRouteButton.frame.height * 0.2)
         onRouteButton.addSubview(thirdLabel)
     }
     
@@ -131,21 +134,21 @@ class ViewControllerTables: UIViewController{
         let borderNextButton = UILabel()
         borderNextButton.backgroundColor = UIColor.init(red: 34/255, green: 209/255, blue: 169/255, alpha: 1)
         borderNextButton.text = ""
-        borderNextButton.frame = CGRect.init(x: 0, y: self.nextButton.frame.height * 0.85, width: self.nextButton.frame.width, height: self.nextButton.frame.height * 0.15)
+        borderNextButton.frame = CGRect.init(x: 0, y: self.nextButton.frame.height * 0.85, width: (self.view.frame.width-40)/3, height: self.nextButton.frame.height * 0.15)
         self.nextButton.addSubview(borderNextButton)
         //  ==== Second button ====
         self.actualButton.backgroundColor = UIColor.clear
         let borderActualButton = UILabel()
         borderActualButton.backgroundColor = UIColor.init(red: 253/255, green: 185/255, blue: 44/255, alpha: 1)
         borderActualButton.text = ""
-        borderActualButton.frame = CGRect.init(x: 0, y: self.actualButton.frame.height * 0.85, width: self.actualButton.frame.width, height: self.actualButton.frame.height * 0.15)
+        borderActualButton.frame = CGRect.init(x: 0, y: self.actualButton.frame.height * 0.85, width: (self.view.frame.width-40)/3, height: self.actualButton.frame.height * 0.15)
         self.actualButton.addSubview(borderActualButton)
         //  ==== Third button ====
         self.onRouteButton.backgroundColor = UIColor.clear
         let borderOnRouteButton = UILabel()
         borderOnRouteButton.backgroundColor = UIColor.init(red: 242/255, green: 95/255, blue: 116/255, alpha: 1)
         borderOnRouteButton.text = ""
-        borderOnRouteButton.frame = CGRect.init(x: 0, y: self.onRouteButton.frame.height * 0.85, width: self.onRouteButton.frame.width, height: self.nextButton.frame.height * 0.15)
+        borderOnRouteButton.frame = CGRect.init(x: 0, y: self.onRouteButton.frame.height * 0.85, width: (self.view.frame.width-40)/3, height: self.nextButton.frame.height * 0.15)
         self.onRouteButton.addSubview(borderOnRouteButton)
     }
     
@@ -227,7 +230,7 @@ extension ViewControllerTables : UITableViewDataSource, UITableViewDelegate{
         cell.plateImage.image = bus.plateImage
         cell.distanceLabel.text = "\(bus.distance!) m."
         cell.timeLabel.text = "\(bus.time!) min."
-        cell.capacityLabel.text = "\(bus.capacity!)% de capacidad"
+        cell.capacityLabel.text = "\(bus.capacity!)% de cap."
         
         cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
         let bgColorView = UIView()
