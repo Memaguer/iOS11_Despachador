@@ -62,8 +62,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let loadingView = segue.destination as! ViewControllerLoadingStation
-        loadingView.station = self.station
+        if segue.identifier == "stationSegue" {
+            let loadingView = segue.destination as! ViewControllerLoadingStation
+            loadingView.station = self.station
+        }
+    }
+    
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
+        print("====salir")
     }
     
 

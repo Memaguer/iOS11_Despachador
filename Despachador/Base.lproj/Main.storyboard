@@ -61,6 +61,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D5n-rk-ndu"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-UG-gyN">
+                                <rect key="frame" x="654" y="40" width="94" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2cr-GX-50W"/>
+                                    <constraint firstAttribute="width" constant="94" id="tkA-xw-Ce8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <state key="normal" title="Acerca del desarrollador">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XVD-FP-Gh6" kind="show" id="euc-iv-13S"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-vW-NNm">
                                 <rect key="frame" x="217" y="715" width="335" height="60"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.67450980392156867" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,6 +92,7 @@
                         <color key="tintColor" red="0.36079544299999999" green="1" blue="0.32978610860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rnO-bI-xGk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Cg-vW-hRM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i4c-UG-gyN" secondAttribute="trailing" constant="20" id="5zk-TM-SGk"/>
                             <constraint firstItem="kNx-Tp-c9a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-143.5" id="76T-bz-kRm"/>
                             <constraint firstItem="Zrp-vW-NNm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="217" id="Bfz-bs-lBd"/>
                             <constraint firstItem="znd-2X-elp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F7p-SB-kQK"/>
@@ -87,6 +102,7 @@
                             <constraint firstItem="uxt-Kk-afc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ktx-IN-a5e"/>
                             <constraint firstItem="fSj-4j-bCm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-13.5" id="RDU-nm-1M0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zrp-vW-NNm" secondAttribute="bottom" constant="249" id="U4O-xV-bHn"/>
+                            <constraint firstItem="i4c-UG-gyN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XDV-UU-WKC"/>
                             <constraint firstItem="kNx-Tp-c9a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agP-jT-RPM"/>
                             <constraint firstItem="uxt-Kk-afc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="d0Z-sV-0nq"/>
                             <constraint firstItem="Zrp-vW-NNm" firstAttribute="top" secondItem="znd-2X-elp" secondAttribute="bottom" constant="34" id="g1w-BD-EsZ"/>
@@ -96,6 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NdY-9w-q4y"/>
                     <connections>
                         <outlet property="startButton" destination="Zrp-vW-NNm" id="iC0-fa-yri"/>
                         <outlet property="stationPickerView" destination="znd-2X-elp" id="8Xl-h8-fxI"/>
@@ -104,7 +121,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="-116"/>
+            <point key="canvasLocation" x="-1513.28125" y="-116.01562499999999"/>
+        </scene>
+        <!--View Controller Developer-->
+        <scene sceneID="27X-eb-wcQ">
+            <objects>
+                <viewController id="XVD-FP-Gh6" customClass="ViewControllerDeveloper" customModule="Despachador" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APn-bF-hFN">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="R3T-Jm-qo6">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2J-M7-6DZ">
+                                <rect key="frame" x="134" y="507" width="500" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="BUy-76-zO3"/>
+                                    <constraint firstAttribute="height" constant="150" id="eIu-Z7-ydX"/>
+                                </constraints>
+                                <string key="text">Application developed at ITESM Campus Ciudad de Mexico at August - December 2017 course by student A01332278
+professor: José M. Molina Espinosa </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-jf-FUg">
+                                <rect key="frame" x="0.0" y="0.0" width="99" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Volver">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5vD-2a-2bR" kind="unwind" unwindAction="unwindSegue:" id="9PO-4h-t4H"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tec" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-zJ-TSm">
+                                <rect key="frame" x="204" y="349" width="360" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="76y-c8-ehd"/>
+                                    <constraint firstAttribute="height" constant="84" id="tII-rU-U7n"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C8f-zJ-TSm" firstAttribute="centerY" secondItem="APn-bF-hFN" secondAttribute="centerY" constant="-121" id="1gG-7V-HAs"/>
+                            <constraint firstItem="R3T-Jm-qo6" firstAttribute="trailing" secondItem="ece-AY-gdj" secondAttribute="trailing" id="9Ap-cx-cMZ"/>
+                            <constraint firstItem="B2J-M7-6DZ" firstAttribute="centerX" secondItem="APn-bF-hFN" secondAttribute="centerX" id="BLO-QV-MWl"/>
+                            <constraint firstItem="C8f-zJ-TSm" firstAttribute="centerX" secondItem="APn-bF-hFN" secondAttribute="centerX" id="JSq-QH-wbI"/>
+                            <constraint firstItem="R3T-Jm-qo6" firstAttribute="leading" secondItem="ece-AY-gdj" secondAttribute="leading" id="Nh4-1q-hxz"/>
+                            <constraint firstItem="ece-AY-gdj" firstAttribute="bottom" secondItem="e7M-jf-FUg" secondAttribute="bottom" constant="976" id="OKa-Io-6mj"/>
+                            <constraint firstItem="ece-AY-gdj" firstAttribute="trailing" secondItem="e7M-jf-FUg" secondAttribute="trailing" constant="669" id="bEM-v3-cGH"/>
+                            <constraint firstItem="e7M-jf-FUg" firstAttribute="top" secondItem="R3T-Jm-qo6" secondAttribute="top" id="c52-SA-ZfJ"/>
+                            <constraint firstItem="R3T-Jm-qo6" firstAttribute="bottom" secondItem="ece-AY-gdj" secondAttribute="bottom" id="ivx-ng-on5"/>
+                            <constraint firstItem="R3T-Jm-qo6" firstAttribute="top" secondItem="APn-bF-hFN" secondAttribute="top" id="kuv-Ix-cqI"/>
+                            <constraint firstItem="B2J-M7-6DZ" firstAttribute="centerY" secondItem="APn-bF-hFN" secondAttribute="centerY" constant="70" id="puh-rD-pVX"/>
+                            <constraint firstItem="e7M-jf-FUg" firstAttribute="leading" secondItem="R3T-Jm-qo6" secondAttribute="leading" id="zf8-xj-hdF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ece-AY-gdj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsB-T0-5m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5vD-2a-2bR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-758.59375" y="-823.2421875"/>
         </scene>
         <!--View Controller Loading Station-->
         <scene sceneID="1do-NQ-MeA">
@@ -441,6 +522,12 @@
                         <viewLayoutGuide key="safeArea" id="riP-DN-p72"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tablero" id="GZj-zz-laq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="w4z-yP-fgr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="I52-OF-xwb" kind="unwind" unwindAction="unwindSegue:" id="Z6S-GD-l4v"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="1B4-PJ-kZb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -456,6 +543,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VD6-5D-8cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="I52-OF-xwb" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="right" id="2gT-1B-bxE">
                     <connections>
                         <action selector="swipeRightTable:" destination="pmJ-90-LQA" id="KAk-m8-em1"/>
@@ -689,5 +777,6 @@
         <image name="interface" width="256" height="256"/>
         <image name="logIcon" width="32" height="32"/>
         <image name="mapIcon" width="32" height="32"/>
+        <image name="tec" width="500" height="132"/>
     </resources>
 </document>
