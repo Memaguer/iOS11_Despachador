@@ -12,7 +12,11 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var nextBuses = [Bus]()
+    var actualBuses = [Bus]()
+    var onRouteBuses = [Bus]()
+    
     var window: UIWindow?
 
 

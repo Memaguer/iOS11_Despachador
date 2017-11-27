@@ -7,7 +7,6 @@
 //  Copyright © 2017 MBG. All rights reserved.
 //
 import UIKit
-import FirebaseDatabase
 
 class ViewControllerTables: UIViewController{
     
@@ -16,23 +15,18 @@ class ViewControllerTables: UIViewController{
     @IBOutlet var actualButton: UIButton!
     @IBOutlet var onRouteButton: UIButton!
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var segmentSelected: Int!
     var segmentSelectedPrevious: Int!
     var cellCount = 0
-    var buses : [Bus] = []
+    var stationId = Int()
+    var buses: [Bus] = []
     var nextBuses: [Bus] = []
     var actualBuses: [Bus] = []
-    var onRouteBuses : [Bus] = []
+    var onRouteBuses: [Bus] = []
     
     var postData = [String] ()
-    
-    var routeId: Int?
-    var stationId: Int?
-    
-    var ref: DatabaseReference?
-    var databaseHandle: DatabaseHandle?
     
     let urlSession: URLSession = URLSession(configuration: .default)
     
@@ -40,34 +34,18 @@ class ViewControllerTables: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
+        print("segue control: nextBuses :\(nextBuses.count)")
+        nextBuses = appDelegate.nextBuses
+        actualBuses = appDelegate.actualBuses
+        onRouteBuses = appDelegate.onRouteBuses
         self.segmentSelected = 0
-        
-        let backgroundTable = UIImageView(image: #imageLiteral(resourceName: "bluePolygon"))
-        backgroundTable.contentMode = .scaleAspectFill
-        self.tableView.backgroundView = backgroundTable
-        
-        
-        
-        
-        
+        //getBusesFromApi()
+        navigationSettings()
         createButtons()
         resetButtons()
         
-        
-        
-        
-        getBusesFromApi()
-        
-        buses = nextBuses
-        
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+        tableSettings()
+        self.showActualBuses(self.actualBuses)
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,7 +59,7 @@ class ViewControllerTables: UIViewController{
         let task = urlSession.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             guard let data = data else { return }
             
-            DispatchQueue.main.sync {
+            //DispatchQueue.main.sync {
                 do{
                     let decoder = JSONDecoder()
                     let buses = try decoder.decode(BusStruct.self, from: data)
@@ -101,9 +79,23 @@ class ViewControllerTables: UIViewController{
                 } catch{
                     print(error.localizedDescription)
                 }
-            }
+            //}
         })
         task.resume()
+    }
+    
+    func navigationSettings() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    func tableSettings() {
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        let backgroundTable = UIImageView(image: #imageLiteral(resourceName: "bluePolygon"))
+        backgroundTable.contentMode = .scaleAspectFill
+        self.tableView.backgroundView = backgroundTable
     }
     
     func createButtons() {

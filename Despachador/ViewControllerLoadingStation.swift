@@ -13,17 +13,15 @@ class ViewControllerLoadingStation: UIViewController {
     @IBOutlet var image: UIImageView!
     @IBOutlet var name: UILabel!
     
-    let urlSession: URLSession = URLSession(configuration: .default)
-    
     var stationId: Int!
     var buses : [Bus] = []
     var nextBuses: [Bus] = []
     var actualBuses: [Bus] = []
     var onRouteBuses : [Bus] = []
-    var flag = false
-    
-    
     var station: Station!
+    var flag = false
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let urlSession: URLSession = URLSession(configuration: .default)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +35,9 @@ class ViewControllerLoadingStation: UIViewController {
         else{
             sleep(1)
             performSegue(withIdentifier: "ViewTabSegue", sender: self)
+            appDelegate.actualBuses = self.actualBuses
+            appDelegate.nextBuses = self.nextBuses
+            appDelegate.onRouteBuses = self.onRouteBuses
         }
     }
     
@@ -59,7 +60,6 @@ class ViewControllerLoadingStation: UIViewController {
                 do{
                     let decoder = JSONDecoder()
                     let buses = try decoder.decode(BusStruct.self, from: data)
-                    //print(buses.result)
                     for bus in buses.result {
                         let newBus = Bus(licensePlate: bus.licensePlate, driver: bus.driver, distance: bus.distance, capacity: bus.capacity, time: bus.time)
                         if bus.station == self.stationId - 1{
@@ -83,14 +83,5 @@ class ViewControllerLoadingStation: UIViewController {
         })
         task.resume()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabController = segue.destination as! TabBarController
-        tabController.nextBuses = self.nextBuses
-        tabController.actualBuses = self.actualBuses
-        tabController.onRouteBuses = self.onRouteBuses
-        tabController.stationId = self.stationId
-    }
-    
 }
 

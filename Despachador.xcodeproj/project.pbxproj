@@ -49,7 +49,6 @@
 		A79903341FC357BB0097978C /* Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79903331FC357BA0097978C /* Log+CoreDataClass.swift */; };
 		A79903361FC357CA0097978C /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */; };
 		A79E5B121FAAAFD70038C982 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B111FAAAFD70038C982 /* TabBarController.swift */; };
-		A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */; };
 		A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */; };
 		A79E5B1A1FAACDD50038C982 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B191FAACDD50038C982 /* Note.swift */; };
 		A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */; };
@@ -183,7 +182,6 @@
 		A79903331FC357BA0097978C /* Log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataClass.swift"; path = "/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A79903351FC357CA0097978C /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataProperties.swift"; path = "/Users/MemoBG/Documents/IOS/Despachador/Despachador/Log+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		A79E5B111FAAAFD70038C982 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTable.swift; sourceTree = "<group>"; };
 		A79E5B171FAAC8AD0038C982 /* ViewControllerBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBook.swift; sourceTree = "<group>"; };
 		A79E5B191FAACDD50038C982 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNote.swift; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 				A79E5B111FAAAFD70038C982 /* TabBarController.swift */,
 				A72225A41FA635CD0032DF31 /* TableViewCellBus.swift */,
 				A79E5B1B1FAAD0EB0038C982 /* TableViewCellNote.swift */,
-				A79E5B151FAAB6EB0038C982 /* UINavigationControllerTable.swift */,
 				A721DC851FA50601001F53C4 /* ViewController.swift */,
 				A7B3D6D11FC7AA7600DABC02 /* Scene.sks */,
 				A7CB57F51FC63F1D0042D1A1 /* ViewControllerAR.swift */,
@@ -678,7 +675,6 @@
 				A755E6A41FA992CB008571C5 /* GFGeoHash.m in Sources */,
 				A79E5B181FAAC8AD0038C982 /* ViewControllerBook.swift in Sources */,
 				A755E6A31FA992CB008571C5 /* GFQuery.m in Sources */,
-				A79E5B161FAAB6EB0038C982 /* UINavigationControllerTable.swift in Sources */,
 				A79E5B1C1FAAD0EB0038C982 /* TableViewCellNote.swift in Sources */,
 				A799032A1FC272660097978C /* NotesCore.xcdatamodeld in Sources */,
 			);

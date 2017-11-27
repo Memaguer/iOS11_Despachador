@@ -577,7 +577,7 @@
         <!--Tablero-->
         <scene sceneID="0Ab-HB-H5x">
             <objects>
-                <navigationController title="Tablero" automaticallyAdjustsScrollViewInsets="NO" id="hql-nV-i57" customClass="UINavigationControllerTable" customModule="Despachador" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Tablero" automaticallyAdjustsScrollViewInsets="NO" id="hql-nV-i57" customClass="NavigationControllerTable" customModule="Despachador" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="busIcon" landscapeImage="DSF-477" id="0nh-1q-FOy">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>

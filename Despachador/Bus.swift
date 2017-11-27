@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Bus: NSObject {
+class Bus: NSObject, NSCoding {
     var licensePlate : String!
     var station : Int!
     var driver : String!
@@ -28,25 +28,24 @@ class Bus: NSObject {
         self.time = time
     }
     
-    init(plateImage:UIImage, plate: String, driver:String, distance:Int, capacity: Int, time: Int, comments:[String]){
-        self.plateImage = plateImage
-        self.licensePlate = plate
-        self.driver = driver
-        self.distance = distance
-        self.comments = comments
-        self.capacity = capacity
-        self.time = time
-        if capacity<35{
-            capacityImage = #imageLiteral(resourceName: "capacity_25")
-        }
-        else if capacity<60{
-            capacityImage = #imageLiteral(resourceName: "capacity_50")
-        }
-        else if capacity<85{
-            capacityImage = #imageLiteral(resourceName: "capacity_75")
-        }
-        else{
-            capacityImage = #imageLiteral(resourceName: "capacity_100")
-        }
+    required convenience init(coder aDecoder: NSCoder) {
+        let licensePlate = aDecoder.decodeInteger(forKey: "licensePlate") as! String
+        let station = aDecoder.decodeInteger(forKey: "station") as! String
+        let driver = aDecoder.decodeInteger(forKey: "driver") as! String
+        let distance = aDecoder.decodeInteger(forKey: "distance")
+        let capacity = aDecoder.decodeInteger(forKey: "capacity")
+        let time = aDecoder.decodeInteger(forKey: "time")
+        let plateImage = aDecoder.decodeInteger(forKey: "plateImage") as! UIImage
+        self.init(licensePlate: licensePlate, driver: driver, distance: distance, capacity: capacity, time: time)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(licensePlate, forKey: "licensePlate")
+        aCoder.encode(station, forKey: "station")
+        aCoder.encode(driver, forKey: "driver")
+        aCoder.encode(distance, forKey: "distance")
+        aCoder.encode(capacity, forKey: "capacity")
+        aCoder.encode(time, forKey: "time")
+        aCoder.encode(plateImage, forKey: "plateImage")
     }
 }
